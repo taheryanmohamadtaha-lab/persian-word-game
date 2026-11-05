@@ -1,0 +1,43 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+
+config/name="بازی با کلمات"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.png"
+boot_splash/bg_color=Color(0.96, 0.78, 0.58, 1)
+
+[audio]
+
+general/text_to_speech=true
+
+[autoload]
+
+Game="*res://scripts/game_state.gd"
+Sfx="*res://scripts/sfx.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/window_width_override=405
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[gui]
+
+theme/custom_font="res://assets/fonts/Vazirmatn-Bold.ttf"
+
+[internationalization]
+
+locale/fallback="fa"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

@@ -1,0 +1,182 @@
+[
+ {
+  "id": "a-e-001",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "شیراز",
+  "clue": "شهر حافظ و سعدی",
+  "hint": "در استان فارس است",
+  "points": 10
+ },
+ {
+  "id": "a-e-002",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "culture",
+  "answer": "نوروز",
+  "clue": "جشن آغاز سال ایرانی",
+  "hint": "سفره هفت‌سین دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-003",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "پاییز",
+  "clue": "فصلی که برگ‌ها زرد و ریخته می‌شوند",
+  "hint": "پس از تابستان می‌آید",
+  "points": 10
+ },
+ {
+  "id": "a-e-004",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "literature",
+  "answer": "خیام",
+  "clue": "سراینده رباعیات مشهور و ریاضی‌دان",
+  "hint": "نیشابوری بود",
+  "points": 10
+ },
+ {
+  "id": "a-e-005",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "اصفهان",
+  "clue": "شهری که «نصف جهان» لقب دارد",
+  "hint": "میدان نقش جهان در آن است",
+  "points": 10
+ },
+ {
+  "id": "a-e-006",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "literature",
+  "answer": "رستم",
+  "clue": "پهلوان بزرگ شاهنامه و پسر زال",
+  "hint": "هفت‌خان را گذراند",
+  "points": 10
+ },
+ {
+  "id": "a-m-001",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "دیوان",
+  "clue": "مجموعه اشعار یک شاعر",
+  "hint": "غزل‌های حافظ در یکی از آن‌ها جمع شده است",
+  "points": 15
+ },
+ {
+  "id": "a-m-002",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "science",
+  "answer": "پژوهش",
+  "clue": "جست‌وجوی علمی برای رسیدن به دانش تازه",
+  "hint": "پنج حرفی است",
+  "points": 15
+ },
+ {
+  "id": "a-m-003",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "مشروطه",
+  "clue": "نهضتی که به تشکیل مجلس و قانون در ایران انجامید",
+  "hint": "انقلاب سال ۱۲۸۵",
+  "points": 15
+ },
+ {
+  "id": "a-m-004",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "دموکراسی",
+  "clue": "حکومت مردم بر مردم",
+  "hint": "واژه‌ای یونانی است",
+  "points": 15
+ },
+ {
+  "id": "a-m-005",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "culture",
+  "answer": "فلسفه",
+  "clue": "دوست‌داری دانایی و اندیشیدن درباره هستی",
+  "hint": "سقراط و افلاطون",
+  "points": 15
+ },
+ {
+  "id": "a-m-006",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "culture",
+  "answer": "تمدن",
+  "clue": "مجموعه پیشرفته فرهنگ، دانش و هنر یک جامعه",
+  "hint": "چهار حرفی است",
+  "points": 15
+ },
+ {
+  "id": "a-h-001",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "استعاره",
+  "clue": "در ادبیات، به کار بردن واژه‌ای در معنای غیرحقیقی بدون ذکر مشبه",
+  "hint": "از آرایه‌های ادبی است",
+  "points": 20
+ },
+ {
+  "id": "a-h-002",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "ایهام",
+  "clue": "آوردن واژه‌ای با دو معنی که هر دو در جمله ممکن است",
+  "hint": "آرایه‌ای لفظی و معنایی است",
+  "points": 20
+ },
+ {
+  "id": "a-h-003",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "logic",
+  "answer": "پارادوکس",
+  "clue": "گزاره‌ای ظاهراً متناقض که شاید درست باشد",
+  "hint": "واژه‌ای فرنگی است",
+  "points": 20
+ },
+ {
+  "id": "a-h-004",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "history",
+  "answer": "کتیبه",
+  "clue": "نوشته‌ای که روی سنگ یا فلز حک شده است",
+  "hint": "بیستون یکی از معروف‌ترین‌هاست",
+  "points": 20
+ },
+ {
+  "id": "a-h-005",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "اسطرلاب",
+  "clue": "ابزار قدیمی برای تعیین ارتفاع ستارگان",
+  "hint": "دانشمندان مسلمان آن را ساختند",
+  "points": 20
+ },
+ {
+  "id": "a-h-006",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "logic",
+  "answer": "تناقض",
+  "clue": "وجود دو چیز ناسازگار در کنار هم",
+  "hint": "پنج حرفی است",
+  "points": 20
+ }
+]

@@ -1,0 +1,182 @@
+[
+ {
+  "id": "t-e-001",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "تهران",
+  "clue": "پایتخت ایران",
+  "hint": "شهر برج میلاد",
+  "points": 10
+ },
+ {
+  "id": "t-e-002",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "sport",
+  "answer": "فوتبال",
+  "clue": "ورزشی با توپ که دو تیم یازده‌نفره بازی می‌کنند",
+  "hint": "جام جهانی دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-003",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "زمین",
+  "clue": "سیاره‌ای که روی آن زندگی می‌کنیم",
+  "hint": "سومین سیاره از خورشید",
+  "points": 10
+ },
+ {
+  "id": "t-e-004",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "literature",
+  "answer": "حافظ",
+  "clue": "شاعر بزرگ شیراز و صاحب دیوان غزل",
+  "hint": "لسان‌الغیب نیز نامیده می‌شود",
+  "points": 10
+ },
+ {
+  "id": "t-e-005",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "technology",
+  "answer": "رایانه",
+  "clue": "دستگاهی که برنامه‌ها را اجرا می‌کند؛ همان کامپیوتر",
+  "hint": "پنج حرفی است",
+  "points": 10
+ },
+ {
+  "id": "t-e-006",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "اکسیژن",
+  "clue": "گازی که برای تنفس لازم است",
+  "hint": "عنصر شماره ۸ جدول تناوبی",
+  "points": 10
+ },
+ {
+  "id": "t-m-001",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "فردوسی",
+  "clue": "سراینده شاهنامه",
+  "hint": "اهل توس بود",
+  "points": 15
+ },
+ {
+  "id": "t-m-002",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "geography",
+  "answer": "اقیانوس",
+  "clue": "پهناورتر از دریا؛ آرام و اطلس نمونه‌هایی از آن‌اند",
+  "hint": "هشت حرفی است",
+  "points": 15
+ },
+ {
+  "id": "t-m-003",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "technology",
+  "answer": "ماهواره",
+  "clue": "جسمی که دور سیاره می‌چرخد",
+  "hint": "در مدار زمین می‌چرخد",
+  "points": 15
+ },
+ {
+  "id": "t-m-004",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "science",
+  "answer": "فتوسنتز",
+  "clue": "گیاهان با آن از نور خورشید غذا می‌سازند",
+  "hint": "با نور و برگ سبز انجام می‌شود",
+  "points": 15
+ },
+ {
+  "id": "t-m-005",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "technology",
+  "answer": "اینترنت",
+  "clue": "شبکه جهانی ارتباط رایانه‌ها",
+  "hint": "با آن وب‌گردی می‌کنیم",
+  "points": 15
+ },
+ {
+  "id": "t-m-006",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "geography",
+  "answer": "دماوند",
+  "clue": "بلندترین قله ایران",
+  "hint": "کوهی آتشفشانی در البرز",
+  "points": 15
+ },
+ {
+  "id": "t-h-001",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "history",
+  "answer": "خوارزمی",
+  "clue": "دانشمند ایرانی که واژه الگوریتم از نام او آمده است",
+  "hint": "پدر جبر نامیده می‌شود",
+  "points": 20
+ },
+ {
+  "id": "t-h-002",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "گرانش",
+  "clue": "نیرویی که اجسام را به سوی هم می‌کشد",
+  "hint": "نیوتن آن را توضیح داد",
+  "points": 20
+ },
+ {
+  "id": "t-h-003",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "کهکشان",
+  "clue": "مجموعه عظیمی از ستاره‌ها مانند راه شیری",
+  "hint": "شش حرفی است",
+  "points": 20
+ },
+ {
+  "id": "t-h-004",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "باکتری",
+  "clue": "موجود تک‌سلولی بسیار ریز که با چشم دیده نمی‌شود",
+  "hint": "بعضی‌شان بیماری‌زا هستند",
+  "points": 20
+ },
+ {
+  "id": "t-h-005",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "geography",
+  "answer": "آتشفشان",
+  "clue": "کوهی که از آن مواد مذاب بیرون می‌ریزد",
+  "hint": "دهانه و گدازه دارد",
+  "points": 20
+ },
+ {
+  "id": "t-h-006",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "سعدی",
+  "clue": "نویسنده گلستان و بوستان",
+  "hint": "اهل شیراز است",
+  "points": 20
+ }
+]

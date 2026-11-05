@@ -1,0 +1,182 @@
+[
+ {
+  "id": "k-e-001",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "animals",
+  "answer": "گربه",
+  "clue": "حیوان خانگی که میو میو می‌کند",
+  "hint": "چهار پا دارد و موش می‌گیرد",
+  "points": 10
+ },
+ {
+  "id": "k-e-002",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "fruits",
+  "answer": "سیب",
+  "clue": "میوه‌ای گرد که قرمز یا زرد یا سبز است",
+  "hint": "حرف آخرش «ب» است",
+  "points": 10
+ },
+ {
+  "id": "k-e-003",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "ماه",
+  "clue": "شب‌ها در آسمان می‌درخشد",
+  "hint": "سه حرفی است",
+  "points": 10
+ },
+ {
+  "id": "k-e-004",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "school",
+  "answer": "مداد",
+  "clue": "با آن می‌نویسیم و می‌شود پاکش کرد",
+  "hint": "در کیف مدرسه است",
+  "points": 10
+ },
+ {
+  "id": "k-e-005",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "آب",
+  "clue": "نوشیدنی بی‌رنگ که همه به آن نیاز دارند",
+  "hint": "دو حرفی است",
+  "points": 10
+ },
+ {
+  "id": "k-e-006",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "food",
+  "answer": "نان",
+  "clue": "خوراکی که از آرد درست می‌شود",
+  "hint": "در تنور یا فر پخته می‌شود",
+  "points": 10
+ },
+ {
+  "id": "k-m-001",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "animals",
+  "answer": "زرافه",
+  "clue": "حیوانی با گردن بسیار بلند",
+  "hint": "برگ درخت‌ها را می‌خورد",
+  "points": 15
+ },
+ {
+  "id": "k-m-002",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "fruits",
+  "answer": "هندوانه",
+  "clue": "میوه تابستانی بزرگ با دانه‌های سیاه",
+  "hint": "داخلش قرمز است",
+  "points": 15
+ },
+ {
+  "id": "k-m-003",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "school",
+  "answer": "کتاب",
+  "clue": "صفحه دارد و آن را می‌خوانیم",
+  "hint": "جلد و صفحه دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-004",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "nature",
+  "answer": "خورشید",
+  "clue": "روزها در آسمان می‌تابد و گرم است",
+  "hint": "ستاره نزدیک ماست",
+  "points": 15
+ },
+ {
+  "id": "k-m-005",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "animals",
+  "answer": "پروانه",
+  "clue": "حشره‌ای با بال‌های رنگارنگ",
+  "hint": "از گل‌ها شهد می‌خورد",
+  "points": 15
+ },
+ {
+  "id": "k-m-006",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "school",
+  "answer": "دفتر",
+  "clue": "در آن تکلیف می‌نویسیم",
+  "hint": "حرف اولش «د» است",
+  "points": 15
+ },
+ {
+  "id": "k-h-001",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "دایناسور",
+  "clue": "جانور غول‌پیکری که میلیون‌ها سال پیش زندگی می‌کرد",
+  "hint": "امروز فقط اسکلتش را در موزه می‌بینیم",
+  "points": 20
+ },
+ {
+  "id": "k-h-002",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "کوسه",
+  "clue": "ماهی بزرگ و خطرناک با باله‌ای مثلثی",
+  "hint": "در دریا زندگی می‌کند",
+  "points": 20
+ },
+ {
+  "id": "k-h-003",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "چتر",
+  "clue": "در روز بارانی بالای سرمان می‌گیریم",
+  "hint": "با آن خیس نمی‌شویم",
+  "points": 20
+ },
+ {
+  "id": "k-h-004",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "school",
+  "answer": "مدرسه",
+  "clue": "جایی که هر روز برای درس خواندن می‌رویم",
+  "hint": "معلم و زنگ تفریح دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-005",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "قورباغه",
+  "clue": "جانور سبزی که می‌پرد و قور قور می‌کند",
+  "hint": "بچه‌اش نوزاد دم‌دار است",
+  "points": 20
+ },
+ {
+  "id": "k-h-006",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "کفشدوزک",
+  "clue": "حشره‌ای کوچک، قرمز با خال‌های سیاه",
+  "hint": "هفت حرفی است",
+  "points": 20
+ }
+]

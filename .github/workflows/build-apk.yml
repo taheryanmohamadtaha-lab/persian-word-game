@@ -1,0 +1,91 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: "4.3"
+
+jobs:
+  check-data:
+    name: بررسی کیفیت سؤال‌ها
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tests/validate_questions.py
+
+  build:
+    name: تست و ساخت APK
+    needs: check-data
+    runs-on: ubuntu-22.04
+    container:
+      image: barichello/godot-ci:4.3
+    env:
+      HAS_KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: آماده‌سازی Godot و اندروید
+        run: |
+          mkdir -p ~/.local/share/godot/export_templates ~/.config/godot
+          if [ -d /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ] && [ ! -d ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable ]; then
+            cp -r /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/
+          fi
+          keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore "$HOME/debug.keystore" -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
+          godot --headless --editor --quit || true
+          SETTINGS=$(ls ~/.config/godot/editor_settings*.tres 2>/dev/null | head -n 1)
+          if [ -z "$SETTINGS" ]; then
+            SETTINGS=~/.config/godot/editor_settings-4.3.tres
+            printf '[gd_resource type="EditorSettings" format=3]\n\n[resource]\n' > "$SETTINGS"
+          fi
+          {
+            echo 'export/android/android_sdk_path = "/usr/lib/android-sdk"'
+            echo "export/android/debug_keystore = \"$HOME/debug.keystore\""
+            echo 'export/android/debug_keystore_user = "androiddebugkey"'
+            echo 'export/android/debug_keystore_pass = "android"'
+            echo 'export/android/force_system_user = false'
+            echo 'export/android/shutdown_adb_on_exit = true'
+          } >> "$SETTINGS"
+
+      - name: ایمپورت پروژه
+        run: godot --headless --path . --import || godot --headless --path . --import
+
+      - name: تست دودی بازی
+        run: godot --headless --path . -s tests/smoke_test.gd
+
+      - name: ساخت APK دیباگ
+        run: |
+          mkdir -p build/android
+          godot --headless --path . --export-debug "Android" build/android/word-game-debug.apk
+          ls -la build/android
+
+      - name: ساخت APK ریلیز (فقط اگر کلید امضا تعریف شده باشد)
+        if: ${{ env.HAS_KEYSTORE == 'true' }}
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          GODOT_ANDROID_KEYSTORE_RELEASE_USER: ${{ secrets.ANDROID_KEYSTORE_USER }}
+          GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          echo "$KEYSTORE_B64" | base64 -d > "$HOME/release.keystore"
+          export GODOT_ANDROID_KEYSTORE_RELEASE_PATH="$HOME/release.keystore"
+          godot --headless --path . --export-release "Android Release" build/android/word-game-release.apk
+          rm -f "$HOME/release.keystore"
+
+      - name: گزارش ساخت
+        run: |
+          {
+            echo "## گزارش ساخت"
+            echo "- نسخهٔ Godot: ${GODOT_VERSION}"
+            echo "- تست دودی: موفق"
+            for f in build/android/*.apk; do echo "- $(basename $f): $(du -h $f | cut -f1)"; done
+            if [ "$HAS_KEYSTORE" != "true" ]; then echo "- نسخهٔ ریلیز ساخته نشد (کلید امضا در Secrets تعریف نشده)"; fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: انتشار APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: word-game-apk
+          path: build/android/*.apk

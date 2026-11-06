@@ -60,6 +60,246 @@
   "points": 10
  },
  {
+  "id": "a-e-007",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "تبریز",
+  "clue": "شهر تاریخی آذربایجان شرقی",
+  "hint": "بازار سرپوشیده دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-008",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "مشهد",
+  "clue": "مرکز خراسان رضوی و شهر زیارتی",
+  "hint": "حرم امام رضا در آن است",
+  "points": 10
+ },
+ {
+  "id": "a-e-009",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "کرمان",
+  "clue": "مرکز استانی که ارگ بم در آن است",
+  "hint": "کویر لوت نزدیکش است",
+  "points": 10
+ },
+ {
+  "id": "a-e-010",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "اهواز",
+  "clue": "مرکز استان خوزستان",
+  "hint": "رود کارون از آن می‌گذرد",
+  "points": 10
+ },
+ {
+  "id": "a-e-011",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "یزد",
+  "clue": "شهر بادگیرها و بافت خشتی",
+  "hint": "سه حرفی است",
+  "points": 10
+ },
+ {
+  "id": "a-e-012",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "رشت",
+  "clue": "مرکز استان گیلان",
+  "hint": "بارانی است",
+  "points": 10
+ },
+ {
+  "id": "a-e-013",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "همدان",
+  "clue": "شهر کهن با آرامگاه بوعلی‌سینا",
+  "hint": "اکباتان نام باستانی‌اش است",
+  "points": 10
+ },
+ {
+  "id": "a-e-014",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "ایران",
+  "clue": "کشوری با پایتخت تهران و سی‌ویک استان",
+  "hint": "فلات است",
+  "points": 10
+ },
+ {
+  "id": "a-e-015",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "زمستان",
+  "clue": "سردترین فصل سال",
+  "hint": "یلدا در آن است",
+  "points": 10
+ },
+ {
+  "id": "a-e-016",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "بهار",
+  "clue": "فصل شکوفه‌ها و سبزه‌ها",
+  "hint": "نخستین فصل سال است",
+  "points": 10
+ },
+ {
+  "id": "a-e-017",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "culture",
+  "answer": "یلدا",
+  "clue": "بلندترین شب سال",
+  "hint": "انار و هندوانه دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-018",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "literature",
+  "answer": "حافظ",
+  "clue": "شاعری که دیوانش برای فال گرفتن کاربرد دارد",
+  "hint": "غزل‌سرای سده هشتم",
+  "points": 10
+ },
+ {
+  "id": "a-e-019",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "literature",
+  "answer": "سعدی",
+  "clue": "نویسنده گلستان و بوستان",
+  "hint": "سخنور سده هفتم",
+  "points": 10
+ },
+ {
+  "id": "a-e-020",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "literature",
+  "answer": "فردوسی",
+  "clue": "سراینده شاهنامه",
+  "hint": "اهل توس بود",
+  "points": 10
+ },
+ {
+  "id": "a-e-021",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "literature",
+  "answer": "مولانا",
+  "clue": "ملقب به رومی و سراینده مثنوی",
+  "hint": "سماع و رقص دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-022",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "culture",
+  "answer": "فرش",
+  "clue": "بافته هنری برای کف خانه",
+  "hint": "گره‌هایش را می‌شمارند",
+  "points": 10
+ },
+ {
+  "id": "a-e-023",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "food",
+  "answer": "زعفران",
+  "clue": "گران‌ترین ادویه جهان",
+  "hint": "رشته‌ای و قرمز است",
+  "points": 10
+ },
+ {
+  "id": "a-e-024",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "food",
+  "answer": "پسته",
+  "clue": "مغز سبز خوشمزه‌ای که رفسنجان معروف آن است",
+  "hint": "پوسته سخت و خندان دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-025",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "food",
+  "answer": "چای",
+  "clue": "نوشیدنی گرم لاهیجان",
+  "hint": "استکان و سماور دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-026",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "food",
+  "answer": "کباب",
+  "clue": "غذای ایرانی با گوشت روی آتش",
+  "hint": "سیخ دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-027",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "food",
+  "answer": "آش",
+  "clue": "غذای غلیظ ایرانی",
+  "hint": "رشته و حبوبات دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-028",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "culture",
+  "answer": "مسجد",
+  "clue": "محل نیایش مسلمانان",
+  "hint": "گنبد و مناره دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-029",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "culture",
+  "answer": "دانشگاه",
+  "clue": "مرکز آموزش عالی",
+  "hint": "کارشناسی و ارشد دارد",
+  "points": 10
+ },
+ {
+  "id": "a-e-030",
+  "age": "adults",
+  "diff": "easy",
+  "topic": "culture",
+  "answer": "روزنامه",
+  "clue": "نشریه خبری روزانه",
+  "hint": "سرمقاله دارد",
+  "points": 10
+ },
+ {
   "id": "a-m-001",
   "age": "adults",
   "diff": "medium",
@@ -86,7 +326,7 @@
   "topic": "history",
   "answer": "مشروطه",
   "clue": "نهضتی که به تشکیل مجلس و قانون در ایران انجامید",
-  "hint": "انقلاب سال ۱۲۸۵",
+  "hint": "سال ۱۲۸۵ خورشیدی",
   "points": 15
  },
  {
@@ -117,6 +357,246 @@
   "answer": "تمدن",
   "clue": "مجموعه پیشرفته فرهنگ، دانش و هنر یک جامعه",
   "hint": "چهار حرفی است",
+  "points": 15
+ },
+ {
+  "id": "a-m-007",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "رباعی",
+  "clue": "شعر چهارمصراعی",
+  "hint": "مصراع‌های اول و دوم و چهارم هم‌قافیه‌اند",
+  "points": 15
+ },
+ {
+  "id": "a-m-008",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "غزل",
+  "clue": "قالب شعری عاشقانه با بیت‌های هم‌قافیه",
+  "hint": "مطلع و مقطع دارد",
+  "points": 15
+ },
+ {
+  "id": "a-m-009",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "مثنوی",
+  "clue": "قالب شعری که هر بیتش قافیه جدا دارد",
+  "hint": "برای داستان‌سرایی مناسب است",
+  "points": 15
+ },
+ {
+  "id": "a-m-010",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "قصیده",
+  "clue": "شعر بلند ستایشی",
+  "hint": "درباره مدح و وصف است",
+  "points": 15
+ },
+ {
+  "id": "a-m-011",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "حماسه",
+  "clue": "داستان قهرمانی و جنگ و دلاوری",
+  "hint": "رزم و پهلوانی دارد",
+  "points": 15
+ },
+ {
+  "id": "a-m-012",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "نثر",
+  "clue": "نوشته بدون وزن و قافیه",
+  "hint": "برابر شعر است",
+  "points": 15
+ },
+ {
+  "id": "a-m-013",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "نگارش",
+  "clue": "هنر درست نوشتن",
+  "hint": "انشا یکی از شاخه‌های آن است",
+  "points": 15
+ },
+ {
+  "id": "a-m-014",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "ویراستار",
+  "clue": "کسی که غلط‌های متن را اصلاح می‌کند",
+  "hint": "غلط‌یاب متن است",
+  "points": 15
+ },
+ {
+  "id": "a-m-015",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "ناشر",
+  "clue": "مؤسسه‌ای که کتاب منتشر می‌کند",
+  "hint": "چاپ و پخش می‌کند",
+  "points": 15
+ },
+ {
+  "id": "a-m-016",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "کاوش",
+  "clue": "حفاری علمی برای یافتن آثار قدیمی",
+  "hint": "باستان‌شناسان انجام می‌دهند",
+  "points": 15
+ },
+ {
+  "id": "a-m-017",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "هخامنشی",
+  "clue": "نخستین شاهنشاهی بزرگ ایران",
+  "hint": "کوروش آن را بنیان گذاشت",
+  "points": 15
+ },
+ {
+  "id": "a-m-018",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "ساسانی",
+  "clue": "آخرین سلسله پیش از اسلام",
+  "hint": "تیسفون پایتختش بود",
+  "points": 15
+ },
+ {
+  "id": "a-m-019",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "اشکانی",
+  "clue": "سلسله‌ای از پارت‌ها",
+  "hint": "پس از سلوکیان آمد",
+  "points": 15
+ },
+ {
+  "id": "a-m-020",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "پهلوی",
+  "clue": "سلسله‌ای که تا سال ۱۳۵۷ حکومت کرد",
+  "hint": "رضاشاه آغازگرش بود",
+  "points": 15
+ },
+ {
+  "id": "a-m-021",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "انقلاب",
+  "clue": "تغییر بنیادین در ساختار حکومت",
+  "hint": "بهمن ۱۳۵۷ در ایران رخ داد",
+  "points": 15
+ },
+ {
+  "id": "a-m-022",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "قانون",
+  "clue": "مجموعه مقررات الزام‌آور",
+  "hint": "مجلس آن را تصویب می‌کند",
+  "points": 15
+ },
+ {
+  "id": "a-m-023",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "دادگاه",
+  "clue": "جایی برای رسیدگی به دعاوی",
+  "hint": "قاضی در آن است",
+  "points": 15
+ },
+ {
+  "id": "a-m-024",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "وکیل",
+  "clue": "کسی که در دادگاه از موکل دفاع می‌کند",
+  "hint": "پرونده می‌خواند",
+  "points": 15
+ },
+ {
+  "id": "a-m-025",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "اقتصاد",
+  "clue": "علم تولید و مصرف و توزیع ثروت",
+  "hint": "بازار و بانک دارد",
+  "points": 15
+ },
+ {
+  "id": "a-m-026",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "تورم",
+  "clue": "افزایش مداوم قیمت‌ها",
+  "hint": "ارزش پول را کم می‌کند",
+  "points": 15
+ },
+ {
+  "id": "a-m-027",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "بورس",
+  "clue": "بازار خرید و فروش سهام",
+  "hint": "شاخص دارد",
+  "points": 15
+ },
+ {
+  "id": "a-m-028",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "صادرات",
+  "clue": "فروش کالا به کشورهای دیگر",
+  "hint": "مقابل واردات است",
+  "points": 15
+ },
+ {
+  "id": "a-m-029",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "politics",
+  "answer": "گمرک",
+  "clue": "محل بازرسی و دریافت عوارض کالا در مرز",
+  "hint": "مرز دارد",
+  "points": 15
+ },
+ {
+  "id": "a-m-030",
+  "age": "adults",
+  "diff": "medium",
+  "topic": "science",
+  "answer": "اکتشاف",
+  "clue": "یافتن چیزی ناشناخته",
+  "hint": "کاشف انجام می‌دهد",
   "points": 15
  },
  {
@@ -177,6 +657,246 @@
   "answer": "تناقض",
   "clue": "وجود دو چیز ناسازگار در کنار هم",
   "hint": "پنج حرفی است",
+  "points": 20
+ },
+ {
+  "id": "a-h-007",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "جناس",
+  "clue": "آرایه‌ای از واژه‌های هم‌شکل یا همانند",
+  "hint": "آوایشان مانند هم است",
+  "points": 20
+ },
+ {
+  "id": "a-h-008",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "سجع",
+  "clue": "هم‌آوایی پایان جمله‌ها در نثر",
+  "hint": "نثر آراسته دارد",
+  "points": 20
+ },
+ {
+  "id": "a-h-009",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "کنایه",
+  "clue": "سخنی با معنای دور و مقصود پنهان",
+  "hint": "معنای ظاهری و باطنی دارد",
+  "points": 20
+ },
+ {
+  "id": "a-h-010",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "تشخیص",
+  "clue": "جان بخشیدن به اشیا در ادبیات",
+  "hint": "درخت می‌خندد مثال آن است",
+  "points": 20
+ },
+ {
+  "id": "a-h-011",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "مجاز",
+  "clue": "کاربرد واژه در معنایی جز معنای اصلی",
+  "hint": "جزء و کل دارد",
+  "points": 20
+ },
+ {
+  "id": "a-h-012",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "اغراق",
+  "clue": "بزرگ‌نمایی در توصیف",
+  "hint": "مبالغه نیز نامیده می‌شود",
+  "points": 20
+ },
+ {
+  "id": "a-h-013",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "تضاد",
+  "clue": "آوردن دو معنی متقابل در کنار هم",
+  "hint": "شب و روز مثال آن است",
+  "points": 20
+ },
+ {
+  "id": "a-h-014",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "تلمیح",
+  "clue": "اشاره به داستان یا آیه‌ای معروف",
+  "hint": "بدون ذکر کامل است",
+  "points": 20
+ },
+ {
+  "id": "a-h-015",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "culture",
+  "answer": "هرمنوتیک",
+  "clue": "دانش تفسیر و فهم متن",
+  "hint": "با تأویل سروکار دارد",
+  "points": 20
+ },
+ {
+  "id": "a-h-016",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "culture",
+  "answer": "آرمان",
+  "clue": "هدف والا و ایده‌آل",
+  "hint": "بلندپروازانه و دور از دسترس است",
+  "points": 20
+ },
+ {
+  "id": "a-h-017",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "culture",
+  "answer": "اخلاق",
+  "clue": "شاخه‌ای از فلسفه درباره خوب و بد",
+  "hint": "رفتار نیک دارد",
+  "points": 20
+ },
+ {
+  "id": "a-h-018",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "culture",
+  "answer": "منطق",
+  "clue": "علم درست اندیشیدن",
+  "hint": "ارسطو بنیانش را گذاشت",
+  "points": 20
+ },
+ {
+  "id": "a-h-019",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "culture",
+  "answer": "قیاس",
+  "clue": "استدلال از کلی به جزئی",
+  "hint": "همه انسان‌ها فانی‌اند، سقراط انسان است",
+  "points": 20
+ },
+ {
+  "id": "a-h-020",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "culture",
+  "answer": "استقرا",
+  "clue": "استدلال از جزء به کل",
+  "hint": "از مشاهده چند نمونه نتیجه می‌گیرد",
+  "points": 20
+ },
+ {
+  "id": "a-h-021",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "فرضیه",
+  "clue": "حدس علمی پیش از آزمایش",
+  "hint": "باید آزموده شود",
+  "points": 20
+ },
+ {
+  "id": "a-h-022",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "نظریه",
+  "clue": "دستگاه تبیین یک پدیده علمی",
+  "hint": "از چند فرضیه آزموده‌شده ساخته می‌شود",
+  "points": 20
+ },
+ {
+  "id": "a-h-023",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "نسبیت",
+  "clue": "نظریه مشهور انیشتین",
+  "hint": "زمان و مکان را به هم می‌پیوندد",
+  "points": 20
+ },
+ {
+  "id": "a-h-024",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "کوانتوم",
+  "clue": "فیزیک ذرات بسیار ریز",
+  "hint": "پلانک بنیانش را گذاشت",
+  "points": 20
+ },
+ {
+  "id": "a-h-025",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "فشار",
+  "clue": "نیروی وارد بر واحد سطح",
+  "hint": "واحدش پاسکال است",
+  "points": 20
+ },
+ {
+  "id": "a-h-026",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "انتروپی",
+  "clue": "معیار بی‌نظمی در ترمودینامیک",
+  "hint": "همیشه رو به افزایش است",
+  "points": 20
+ },
+ {
+  "id": "a-h-027",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "متابولیسم",
+  "clue": "فرایند سوخت‌وساز بدن",
+  "hint": "تبدیل غذا به انرژی است",
+  "points": 20
+ },
+ {
+  "id": "a-h-028",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "ژنتیک",
+  "clue": "علم وراثت",
+  "hint": "دی‌ان‌ای دارد",
+  "points": 20
+ },
+ {
+  "id": "a-h-029",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "ایمنی",
+  "clue": "توان بدن در برابر عوامل بیماری‌زا",
+  "hint": "واکسن آن را تقویت می‌کند",
+  "points": 20
+ },
+ {
+  "id": "a-h-030",
+  "age": "adults",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "هورمون",
+  "clue": "پیام‌رسان شیمیایی غدد بدن",
+  "hint": "انسولین نمونه‌ای از آن است",
   "points": 20
  }
 ]

@@ -2,7 +2,7 @@ extends Node
 ## وضعیت کلی بازی: سؤال‌ها، مرحله‌ها، امتیاز، سکه، پیشرفت، تنظیمات و ذخیره‌سازی.
 
 const SAVE_PATH := "user://save_v1.json"
-const LEVEL_SIZE := 3
+const LEVEL_SIZE := 5
 const QUESTION_DIR := "res://data/questions/"
 const AGES := {"kids": "کودکان", "teens": "نوجوانان", "adults": "بزرگسالان"}
 const DIFFS := {"easy": "آسان", "medium": "متوسط", "hard": "سخت"}

@@ -1,8 +1,9 @@
 extends Screen
-## هستهٔ بازی: حدس کلمه از روی سرنخ با لمس حروف.
+## هستهٔ بازی: حدس کلمه از روی سرنخ. هر حرف درست همهٔ جاهای خودش را پر می‌کند؛ هر حرف اشتباه یک گوی می‌شکند.
 
 const BOX := 88.0
 const GAP := 12.0
+const ORBS := {"easy": 6, "medium": 5, "hard": 5}
 const DIALOGS := {
 	"wrong": ["ای بابا! این یکی درست نبود!", "یه بار دیگه امتحان کن!", "نه نه! یه کم بیشتر فکر کن!", "نزدیک بودی! دوباره تلاش کن!"],
 	"correct": ["آفرین! درست گفتی!", "باریکلا! چه باهوشی!", "عالی بود! بریم سراغ بعدی!", "آفرین قهرمان!"],
@@ -15,8 +16,12 @@ var level := 1
 var qs: Array = []
 var qi := 0
 var answer: Array = []
-var filled: Array = []
-var fixed := 0
+var filled: Array = []   # برای هر خانه حرف یا رشتهٔ خالی
+var q_wrong := 0
+var used := {}
+var letter_btns := {}
+var orbs: OrbsView
+var overlay: Control = null
 var boxes: Array = []
 var box_labels: Array = []
 var mistakes := 0
@@ -78,24 +83,27 @@ func build() -> void:
 	boxes_root = Control.new()
 	boxes_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(boxes_root)
+	orbs = OrbsView.new()
+	orbs.reset(ORBS[diff])
+	orbs.position = Vector2(x(360) - orbs.size.x / 2.0, 536.0)
+	add_child(orbs)
 	hero = Hero.new()
-	hero.scale = Vector2(0.85, 0.85)
-	hero.position = Vector2(x(0), 535.0 + yextra * 0.4)
+	hero.scale = Vector2(0.9, 0.9)
+	hero.position = Vector2(x(0), 612.0 + yextra * 0.4)
 	add_child(hero)
 	bubble = Bubble.new()
-	bubble.size = Vector2(500, 130)
-	bubble.position = Vector2(x(200), 570.0 + yextra * 0.4)
+	bubble.size = Vector2(470, 130)
+	bubble.position = Vector2(x(215), 650.0 + yextra * 0.4)
 	add_child(bubble)
 	letters_root = Control.new()
 	letters_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(letters_root)
-	# نوار دکمه‌های پایین (از راست به چپ)
+	# نوار دکمه‌های پایین
 	var ay := 1180.0 + yextra
-	var acts := [["حذف حرف", Color("e8b04a"), _delete_last], ["پاک‌کردن", Color("e8b04a"), _clear_all],
-		["راهنما\n%s سکه" % UI.fa(Game.HINT_COST), Color("6fbf5a"), _hint], ["عبور\n−%s امتیاز" % UI.fa(Game.SKIP_COST), Color("d9826a"), _skip]]
-	for i in acts.size():
-		var b := UI.button(self, acts[i][0], Vector2(x(540.0 - i * 170.0), ay), Vector2(150, 80), acts[i][1], 22)
-		b.pressed.connect(acts[i][2])
+	var hb := UI.button(self, "راهنما\n%s سکه" % UI.fa(Game.HINT_COST), Vector2(x(370), ay), Vector2(320, 80), Color("6fbf5a"), 24)
+	hb.pressed.connect(_hint)
+	var sb := UI.button(self, "عبور\n−%s امتیاز" % UI.fa(Game.SKIP_COST), Vector2(x(30), ay), Vector2(320, 80), Color("d9826a"), 24)
+	sb.pressed.connect(_skip)
 	load_question()
 
 func _process(delta: float) -> void:
@@ -122,10 +130,12 @@ func refresh_stats() -> void:
 func load_question() -> void:
 	var q: Dictionary = qs[qi]
 	answer = []
+	filled = []
 	for ch in str(q["answer"]):
 		answer.append(ch)
-	filled = []
-	fixed = 0
+		filled.append("")
+	used = {}
+	q_wrong = 0
 	q_hints = 0
 	locked = false
 	q_start = Time.get_ticks_msec() / 1000.0
@@ -136,8 +146,9 @@ func load_question() -> void:
 	counter.text = "%s پرسش تا گنجینه" % UI.fa(qs.size() - qi)
 	cups.left = qs.size() - qi
 	timer_label.visible = diff == "hard"
+	orbs.reset(ORBS[diff])
 	build_boxes()
-	build_letters(str(q["answer"]))
+	build_letters()
 	refresh_stats()
 	if qi == 0:
 		say("ببینم این مرحله رو هم می‌تونی حل کنی؟", "encourage")
@@ -170,40 +181,27 @@ func build_boxes() -> void:
 			boxes.append(p)
 			box_labels.append(UI.label(p, "", Vector2.ZERO, Vector2(BOX, BOX), 54))
 
-func letter_set(ans: String) -> Array:
-	var all: Array = Game.ALPHABET.duplicate()
-	if diff == "hard":
-		return all
-	var need := {}
-	for ch in ans:
-		need[ch] = true
-	var others: Array = all.filter(func(c): return not need.has(c))
-	others.shuffle()
-	var chosen: Array = need.keys()
-	chosen.append_array(others.slice(0, 6 if diff == "easy" else 12))
-	chosen.sort_custom(func(a, b): return all.find(a) < all.find(b))
-	return chosen
-
-func build_letters(ans: String) -> void:
+func build_letters() -> void:
 	for c in letters_root.get_children():
 		c.queue_free()
-	var chosen := letter_set(ans)
-	var big := chosen.size() <= 24
-	var cols := 6 if big else 7
-	var sz := 96.0 if big else 76.0
-	var pitch := sz + (10.0 if big else 8.0)
-	var rows := int(ceil(chosen.size() / float(cols)))
+	letter_btns.clear()
+	var all: Array = Game.ALPHABET
+	var cols := 9
+	var sz := 66.0
+	var pitch := 74.0
+	var rows := int(ceil(all.size() / float(cols)))
 	var bottom := 1160.0 + yextra
 	var top := bottom - rows * pitch + (pitch - sz)
-	for i in chosen.size():
+	for i in all.size():
 		var r := int(floor(i / float(cols)))
 		var c := i % cols
-		var cnt := mini(cols, chosen.size() - r * cols)
+		var cnt := mini(cols, all.size() - r * cols)
 		var row_w := cnt * pitch - (pitch - sz)
 		var px := x(360) + row_w / 2.0 - sz - c * pitch
-		var ch: String = chosen[i]
-		var b := UI.button(letters_root, ch, Vector2(px, top + r * pitch), Vector2(sz, sz), Color("ead6a4"), 52 if big else 42, false)
+		var ch: String = all[i]
+		var b := UI.button(letters_root, ch, Vector2(px, top + r * pitch), Vector2(sz, sz), Color("ead6a4"), 38, false)
 		b.pressed.connect(_on_letter.bind(ch))
+		letter_btns[ch] = b
 
 func set_box(i: int, ch: String, tint: Color = Color(0, 0, 0, 0)) -> void:
 	box_labels[i].text = ch
@@ -212,34 +210,40 @@ func set_box(i: int, ch: String, tint: Color = Color(0, 0, 0, 0)) -> void:
 	var col := tint if tint.a > 0.0 else Color("d8bf8c")
 	boxes[i].add_theme_stylebox_override("panel", UI.style(col, 16, Color("7d6338"), 3))
 
+func _mark_letter(ch: String, good: bool) -> void:
+	var b: Button = letter_btns.get(ch)
+	if b == null:
+		return
+	var col := Color("8fd17a") if good else Color("e08a80")
+	b.add_theme_stylebox_override("disabled", UI.style(col, 20, col.darkened(0.4), 0, 4))
+	b.add_theme_color_override("font_disabled_color", Color(UI.INK, 0.85))
+	b.disabled = true
+
+## یک حرف را اعمال می‌کند: درست = همهٔ جاهای آن پر می‌شود، غلط = یک گوی می‌شکند.
+func _apply_letter(ch: String, free: bool = false) -> void:
+	used[ch] = true
+	if answer.has(ch):
+		_mark_letter(ch, true)
+		Sfx.play("pick")
+		for i in answer.size():
+			if answer[i] == ch:
+				filled[i] = ch
+				set_box(i, ch, Color("f2d27a") if free else Color("e9d9a8"))
+		if not filled.has(""):
+			locked = true
+			hero.set_mood("excited", 0.6)
+			await get_tree().create_timer(0.45).timeout
+			if is_inside_tree():
+				_on_correct()
+	else:
+		_mark_letter(ch, false)
+		_break_orb()
+
 func _on_letter(ch: String) -> void:
-	if locked or filled.size() >= answer.size():
+	if locked or used.has(ch):
 		return
 	idle = 0.0
-	Sfx.play("pick")
-	filled.append(ch)
-	set_box(filled.size() - 1, ch, Color("e9d9a8"))
-	if filled.size() == answer.size():
-		locked = true
-		hero.set_mood("excited", 0.6)
-		await get_tree().create_timer(0.35).timeout
-		if is_inside_tree():
-			_check()
-
-func _delete_last() -> void:
-	if locked or filled.size() <= fixed:
-		return
-	Sfx.play("delete")
-	filled.pop_back()
-	set_box(filled.size(), "")
-
-func _clear_all() -> void:
-	if locked:
-		return
-	Sfx.play("delete")
-	while filled.size() > fixed:
-		filled.pop_back()
-		set_box(filled.size(), "")
+	_apply_letter(ch)
 
 func _hint() -> void:
 	if locked:
@@ -247,42 +251,79 @@ func _hint() -> void:
 	if Game.coins < Game.HINT_COST:
 		say("سکه‌هات کافی نیست! چند تا سؤال دیگه حل کن.", "sad", 2.5)
 		return
-	var k := 0
-	while k < filled.size() and k < answer.size() and filled[k] == answer[k]:
-		k += 1
-	while filled.size() > k:
-		filled.pop_back()
-		set_box(filled.size(), "")
+	var missing: Array = []
+	for i in answer.size():
+		if filled[i] == "" and not missing.has(answer[i]):
+			missing.append(answer[i])
+	if missing.is_empty():
+		return
 	Game.add_coins(-Game.HINT_COST)
 	hints_used += 1
 	q_hints += 1
 	Sfx.play("hint")
-	filled.append(answer[k])
-	fixed = filled.size()
-	set_box(k, answer[k], Color("f2d27a"))
 	refresh_stats()
 	say(str(qs[qi].get("hint", "یه حرف رو برات گذاشتم!")), "encourage", 3.0)
-	if filled.size() == answer.size():
-		locked = true
-		await get_tree().create_timer(0.5).timeout
-		if is_inside_tree():
-			_check()
+	_apply_letter(missing.pick_random(), true)
 
-func _check() -> void:
-	if "".join(filled) == "".join(answer):
-		_on_correct()
+func _break_orb() -> void:
+	mistakes += 1
+	q_wrong += 1
+	streak = 0
+	orbs.shatter()
+	Sfx.play("shatter")
+	if q_wrong >= orbs.total:
+		_game_over()
+		return
+	var left := orbs.total - q_wrong
+	if left == 1:
+		say("وای! فقط یه گوی مونده، مواظب باش!", "surprised", 2.2)
 	else:
-		_on_wrong()
+		say(DIALOGS["wrong"].pick_random(), "sad", 1.8)
+
+func _game_over() -> void:
+	locked = true
+	Sfx.play("gameover")
+	for i in answer.size():
+		if filled[i] == "":
+			set_box(i, answer[i], Color("e8a09a"))
+	say("ای بابا! همهٔ گوی‌ها شکستند. بیا از اول شروع کنیم!", "sad", 5.0)
+	await get_tree().create_timer(1.8).timeout
+	if not is_inside_tree():
+		return
+	overlay = Control.new()
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(overlay)
+	var dim := ColorRect.new()
+	dim.color = Color(0, 0, 0, 0.55)
+	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	overlay.add_child(dim)
+	var py := H / 2.0 - 230.0
+	var panel := UI.panel(overlay, Vector2(x(60), py), Vector2(600, 460), UI.CREAM, 34, Color("c0504a"), 6)
+	UI.label(panel, "همهٔ گوی‌ها شکستند!", Vector2(0, 24), Vector2(600, 80), 46, Color("a03020"))
+	UI.label(panel, "جواب این بود: %s" % "".join(answer), Vector2(20, 120), Vector2(560, 70), 36)
+	UI.label(panel, "مرحله از اول شروع می‌شود.", Vector2(20, 195), Vector2(560, 56), 28)
+	var again := UI.button(panel, "شروع دوباره", Vector2(80, 270), Vector2(440, 84), Color("6fbf5a"), 38)
+	again.pressed.connect(func(): main.go("game", {"age": age, "diff": diff, "level": level}))
+	var mp := UI.button(panel, "نقشه مرحله‌ها", Vector2(80, 366), Vector2(440, 70), Color("d9b36a"), 30)
+	mp.pressed.connect(func(): main.go("map"))
+	UI.pop(panel, 0.85)
 
 func _on_correct() -> void:
 	var q: Dictionary = qs[qi]
 	var elapsed := Time.get_ticks_msec() / 1000.0 - q_start
-	streak += 1
+	if q_wrong == 0:
+		streak += 1
+	else:
+		streak = 0
 	var pts := int(round(float(q.get("points", 10)) * float(Game.DIFF_MULT[diff])))
 	pts += clampi(int(20.0 - elapsed), 0, 10)
 	if q_hints == 0:
 		pts += 5
-	pts += mini(streak - 1, 5) * 2
+	if q_wrong == 0:
+		pts += 5
+	pts += mini(maxi(streak - 1, 0), 5) * 2
 	level_score += pts
 	level_coins += 2
 	Game.add_coins(2)
@@ -302,25 +343,6 @@ func _on_correct() -> void:
 	await get_tree().create_timer(1.7).timeout
 	if is_inside_tree():
 		_next()
-
-func _on_wrong() -> void:
-	mistakes += 1
-	streak = 0
-	Sfx.play("wrong")
-	say(DIALOGS["wrong"].pick_random(), "sad", 2.2)
-	for i in range(fixed, boxes.size()):
-		boxes[i].add_theme_stylebox_override("panel", UI.style(Color("e8a09a"), 16, Color("9a4a40"), 3))
-	var tw := create_tween()
-	for k in 4:
-		tw.tween_property(boxes_root, "position:x", 10.0 if k % 2 == 0 else -10.0, 0.05)
-	tw.tween_property(boxes_root, "position:x", 0.0, 0.05)
-	await get_tree().create_timer(0.8).timeout
-	if not is_inside_tree():
-		return
-	while filled.size() > fixed:
-		filled.pop_back()
-		set_box(filled.size(), "")
-	locked = false
 
 func _reveal_answer() -> void:
 	for i in answer.size():
@@ -342,16 +364,9 @@ func _skip() -> void:
 		_next()
 
 func _on_timeout() -> void:
-	locked = true
-	mistakes += 1
-	streak = 0
-	Sfx.play("wrong")
-	_reveal_answer()
-	cups.left = qs.size() - qi - 1
-	say("وقت تمام شد! جواب این بود: %s" % "".join(answer), "sad", 2.5)
-	await get_tree().create_timer(2.4).timeout
-	if is_inside_tree():
-		_next()
+	# پایان وقت (سطح سخت): یک گوی می‌شکند و زمان دوباره از ۶۰ ثانیه شروع می‌شود
+	time_left = 60.0
+	_break_orb()
 
 func _next() -> void:
 	qi += 1
@@ -365,7 +380,7 @@ func _finish() -> void:
 	var stars := 1
 	if mistakes == 0 and hints_used == 0 and skipped == 0:
 		stars = 3
-	elif mistakes <= 2 and skipped == 0:
+	elif mistakes <= 3 and skipped == 0:
 		stars = 2
 	if stars == 3:
 		level_coins += 5

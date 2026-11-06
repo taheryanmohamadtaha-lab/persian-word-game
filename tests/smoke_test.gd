@@ -26,10 +26,10 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 	print("== داده")
-	check(game.questions.size() == 54, "۵۴ سؤال بارگذاری شد (%d)" % game.questions.size())
+	check(game.questions.size() == 270, "۲۷۰ سؤال بارگذاری شد (%d)" % game.questions.size())
 	for age in game.AGES:
 		for diff in game.DIFFS:
-			check(game.level_count(age, diff) >= 2, "%s/%s حداقل ۲ مرحله دارد" % [age, diff])
+			check(game.level_count(age, diff) >= 6, "%s/%s حداقل ۶ مرحله دارد" % [age, diff])
 	print("== صفحه‌ها")
 	for s in [["start", {}], ["choice", {"kind": "age"}], ["choice", {"kind": "diff"}], ["map", {}],
 			["achievements", {}], ["settings", {}], ["help", {}]]:
@@ -37,52 +37,34 @@ func _run() -> void:
 		await process_frame
 		await process_frame
 		check(is_instance_valid(main.cur) and main.cur.get_child_count() > 0, "صفحهٔ %s ساخته شد" % s[0])
-	print("== مجموعهٔ حروف (همهٔ سؤال‌ها قابل حل)")
-	var gs_script = load("res://scripts/screens/game_screen.gd")
-	var probe = Screen.new()
-	probe.set_script(gs_script)
-	var ok_all := true
-	for q in game.questions:
-		for d in ["easy", "medium", "hard"]:
-			probe.diff = d
-			var set_: Array = probe.letter_set(q["answer"])
-			for ch in q["answer"]:
-				if not set_.has(ch):
-					ok_all = false
-					print("    حرف ", ch, " در ", q["id"], " نیست")
-	check(ok_all, "حروف پاسخ همیشه در مجموعهٔ حروف است")
-	probe.diff = "hard"
-	check(probe.letter_set("ماه").size() == 33, "سطح سخت: همهٔ ۳۳ حرف")
-	probe.free()
 	print("== بازی کودکان/آسان مرحله ۱")
 	main.go("game", {"age": "kids", "diff": "easy", "level": 1})
 	await process_frame
 	await process_frame
 	var g = main.cur
-	check(g.qs.size() == 3 and g.boxes.size() == g.answer.size(), "مرحله و خانه‌ها ساخته شد")
-	# اشتباه
-	var wrong_letters: Array = ["ز", "ژ", "ظ"]
-	var n: int = g.answer.size()
-	for i in n:
-		g._on_letter(wrong_letters[i % 3] if g.answer[i] != wrong_letters[i % 3] else "ض")
-	await wait(1.6)
-	check(g.mistakes == 1 and g.filled.size() == 0 and not g.locked, "پاسخ اشتباه: شمارش اشتباه و پاک‌سازی")
-	# حذف حرف و پاک‌کردن
+	check(g.qs.size() == 5 and g.boxes.size() == g.answer.size(), "مرحله (۵ سؤال) و خانه‌ها ساخته شد")
+	check(g.letters_root.get_child_count() == 33, "همهٔ ۳۳ حرف الفبا نمایش داده می‌شود")
+	check(g.orbs.total == 6, "سطح آسان: ۶ گوی")
+	# حرف اشتباه
+	var wrong_ch := ""
+	for ch in game.ALPHABET:
+		if not g.answer.has(ch):
+			wrong_ch = ch
+			break
+	g._on_letter(wrong_ch)
+	check(g.orbs.broken == 1 and g.mistakes == 1, "حرف اشتباه: یک گوی شکست")
+	g._on_letter(wrong_ch)
+	check(g.orbs.broken == 1 and g.mistakes == 1, "حرف تکراری جریمه ندارد")
+	# حرف درست
 	g._on_letter(g.answer[0])
-	g._on_letter(g.answer[1])
-	g._delete_last()
-	check(g.filled.size() == 1, "حذف آخرین حرف")
-	g._clear_all()
-	check(g.filled.size() == 0, "پاک‌کردن همه")
+	check(g.filled[0] == g.answer[0], "حرف درست در خانه نشست")
 	# راهنما
 	var coins_before: int = game.coins
+	var filled_before: int = g.filled.count("")
 	g._hint()
-	check(g.filled.size() == 1 and g.filled[0] == g.answer[0] and game.coins == coins_before - 5, "راهنما: یک حرف درست و ۵ سکه کم شد")
-	g._clear_all()
-	check(g.filled.size() == 1, "حرف راهنما پاک نمی‌شود")
-	for i in range(1, g.answer.size()):
-		g._on_letter(g.answer[i])
-	await wait(2.4)
+	check(game.coins == coins_before - 5 and g.filled.count("") < filled_before, "راهنما: یک حرف درست و ۵ سکه کم شد")
+	await _solve(g)
+	await wait(2.6)
 	check(g.qi == 1 and g.level_score > 0, "پاسخ درست: رفتن به سؤال بعد و امتیاز (%d)" % g.level_score)
 	check(game.achievements.has("first_word"), "دستاورد اولین کلمه")
 	# عبور
@@ -90,10 +72,27 @@ func _run() -> void:
 	g._skip()
 	await wait(2.6)
 	check(g.qi == 2 and g.skipped == 1 and g.level_score == maxi(0, score_before - 10), "عبور: ده امتیاز کم شد")
-	# سؤال آخر درست
+	await _solve(g)
+	await wait(2.6)
+	check(g.qi == 3, "سؤال سوم حل شد")
+	# حرف تکراری در کلمه: همهٔ خانه‌ها با هم پر شوند
+	var dup := ""
 	for ch in g.answer:
-		g._on_letter(ch)
-	await wait(2.4)
+		if g.answer.count(ch) > 1:
+			dup = ch
+			break
+	check(dup != "", "کلمهٔ «%s» حرف تکراری دارد" % "".join(g.answer))
+	g._on_letter(dup)
+	var cnt := 0
+	for c in g.filled:
+		if c == dup:
+			cnt += 1
+	check(cnt == g.answer.count(dup) and cnt >= 2, "یک لمس، همهٔ خانه‌های همان حرف را پر کرد (%d خانه)" % cnt)
+	await _solve(g)
+	await wait(2.6)
+	check(g.qi == 4, "سؤال چهارم حل شد")
+	await _solve(g)
+	await wait(2.6)
 	var r = main.cur
 	check(r != g and r.args.has("stars"), "صفحهٔ نتیجه نمایش داده شد")
 	check(game.is_unlocked("kids", "easy", 2), "مرحلهٔ ۲ باز شد")
@@ -102,14 +101,41 @@ func _run() -> void:
 	var saved_coins: int = game.coins
 	game.load_save()
 	check(game.coins == saved_coins and game.is_unlocked("kids", "easy", 2), "ذخیره/بازیابی پیشرفت")
+	print("== شکستن همهٔ گوی‌ها و شروع دوباره")
+	main.go("game", {"age": "kids", "diff": "easy", "level": 2})
+	await process_frame
+	await process_frame
+	g = main.cur
+	for ch in game.ALPHABET:
+		if g.locked:
+			break
+		if not g.answer.has(ch):
+			g._on_letter(ch)
+	check(g.orbs.broken == g.orbs.total and g.locked, "همهٔ گوی‌ها شکست و بازی قفل شد")
+	await wait(2.4)
+	check(g.overlay != null and is_instance_valid(g.overlay), "پیام «شروع دوباره» نمایش داده شد")
+	main.go("game", {"age": "kids", "diff": "easy", "level": 2})
+	await process_frame
+	await process_frame
+	g = main.cur
+	check(g.qi == 0 and g.orbs.broken == 0 and not g.locked, "مرحله از اول شروع شد")
 	print("== سطح سخت (زمان‌دار)")
 	main.go("game", {"age": "adults", "diff": "hard", "level": 1})
 	await process_frame
 	await process_frame
 	g = main.cur
-	check(g.letters_root.get_child_count() == 33, "۳۳ دکمهٔ حرف")
+	check(g.orbs.total == 5, "سطح سخت: ۵ گوی")
 	g.time_left = 0.05
-	await wait(3.2)
-	check(g.mistakes == 1 and g.qi == 1, "پایان زمان: اشتباه ثبت و سؤال بعد")
+	await wait(0.4)
+	check(g.mistakes == 1 and g.orbs.broken == 1 and not g.locked, "پایان وقت: یک گوی شکست")
 	print("== نتیجه: ", "همه موفق" if fails == 0 else "%d شکست" % fails)
 	quit(1 if fails > 0 else 0)
+
+func _solve(g) -> void:
+	var seen := {}
+	for ch in g.answer:
+		if seen.has(ch):
+			continue
+		seen[ch] = true
+		if not g.used.has(ch):
+			g._on_letter(ch)

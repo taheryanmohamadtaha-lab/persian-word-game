@@ -60,6 +60,246 @@
   "points": 10
  },
  {
+  "id": "t-e-007",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "ایران",
+  "clue": "کشوری با پایتخت تهران",
+  "hint": "در آسیا قرار دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-008",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "دریا",
+  "clue": "پهنه بزرگ آب شور",
+  "hint": "ساحل دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-009",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "گیاه",
+  "clue": "موجود زنده‌ای که ریشه دارد و از خاک سبز می‌شود",
+  "hint": "برگ و ساقه دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-010",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "مریخ",
+  "clue": "سیاره سرخ منظومه شمسی",
+  "hint": "چهارمین سیاره است",
+  "points": 10
+ },
+ {
+  "id": "t-e-011",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "آفریقا",
+  "clue": "قاره‌ای که صحرای بزرگ دارد",
+  "hint": "شیر و فیل زیاد دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-012",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "sport",
+  "answer": "بسکتبال",
+  "clue": "ورزشی که توپ را در حلقه می‌اندازند",
+  "hint": "پنج‌نفره است",
+  "points": 10
+ },
+ {
+  "id": "t-e-013",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "sport",
+  "answer": "والیبال",
+  "clue": "ورزشی که توپ از روی تور رد می‌شود",
+  "hint": "شش‌نفره است",
+  "points": 10
+ },
+ {
+  "id": "t-e-014",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "sport",
+  "answer": "شنا",
+  "clue": "ورزشی که در استخر انجام می‌شود",
+  "hint": "کرال و قورباغه دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-015",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "sport",
+  "answer": "شطرنج",
+  "clue": "بازی فکری با شاه و وزیر",
+  "hint": "صفحه شصت‌وچهارخانه دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-016",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "technology",
+  "answer": "موبایل",
+  "clue": "گوشی هوشمند و همراه",
+  "hint": "صفحه لمسی دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-017",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "technology",
+  "answer": "ماوس",
+  "clue": "وسیله‌ای که با آن نشانگر رایانه را حرکت می‌دهیم",
+  "hint": "کلیک می‌کند",
+  "points": 10
+ },
+ {
+  "id": "t-e-018",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "فضانورد",
+  "clue": "کسی که به فضا سفر می‌کند",
+  "hint": "لباس مخصوص می‌پوشد",
+  "points": 10
+ },
+ {
+  "id": "t-e-019",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "دانشمند",
+  "clue": "کسی که آزمایش و پژوهش می‌کند",
+  "hint": "در آزمایشگاه کار می‌کند",
+  "points": 10
+ },
+ {
+  "id": "t-e-020",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "history",
+  "answer": "تاریخ",
+  "clue": "دانش بررسی رویدادهای گذشته",
+  "hint": "به سال‌ها و دوران‌ها می‌پردازد",
+  "points": 10
+ },
+ {
+  "id": "t-e-021",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "geography",
+  "answer": "جغرافیا",
+  "clue": "دانش شناخت زمین و کشورها",
+  "hint": "نقشه و کره دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-022",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "ریاضی",
+  "clue": "درس اعداد و محاسبه",
+  "hint": "جمع و تفریق دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-023",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "فیزیک",
+  "clue": "علم نیرو و حرکت",
+  "hint": "نیوتن و انیشتین",
+  "points": 10
+ },
+ {
+  "id": "t-e-024",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "شیمی",
+  "clue": "علم ماده و واکنش‌ها",
+  "hint": "جدول تناوبی دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-025",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "science",
+  "answer": "سلول",
+  "clue": "کوچک‌ترین واحد زنده",
+  "hint": "هسته دارد",
+  "points": 10
+ },
+ {
+  "id": "t-e-026",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "body",
+  "answer": "قلب",
+  "clue": "عضوی که خون را پمپ می‌کند",
+  "hint": "می‌تپد",
+  "points": 10
+ },
+ {
+  "id": "t-e-027",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "body",
+  "answer": "مغز",
+  "clue": "عضو فکر کردن",
+  "hint": "داخل جمجمه است",
+  "points": 10
+ },
+ {
+  "id": "t-e-028",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "body",
+  "answer": "استخوان",
+  "clue": "سازه سفت بدن",
+  "hint": "اسکلت را می‌سازد",
+  "points": 10
+ },
+ {
+  "id": "t-e-029",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "ابر",
+  "clue": "از بخار آب در آسمان ساخته می‌شود",
+  "hint": "باران می‌آورد",
+  "points": 10
+ },
+ {
+  "id": "t-e-030",
+  "age": "teens",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "رعد",
+  "clue": "صدای بلند پس از درخشش آسمان",
+  "hint": "با طوفان همراه است",
+  "points": 10
+ },
+ {
   "id": "t-m-001",
   "age": "teens",
   "diff": "medium",
@@ -120,6 +360,246 @@
   "points": 15
  },
  {
+  "id": "t-m-007",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "geography",
+  "answer": "خلیج",
+  "clue": "بخشی از دریا که در خشکی فرو رفته است",
+  "hint": "فارس نمونه معروفش است",
+  "points": 15
+ },
+ {
+  "id": "t-m-008",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "geography",
+  "answer": "نیل",
+  "clue": "رودخانه بلند آفریقا",
+  "hint": "از مصر می‌گذرد",
+  "points": 15
+ },
+ {
+  "id": "t-m-009",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "geography",
+  "answer": "آمازون",
+  "clue": "بزرگ‌ترین جنگل بارانی جهان",
+  "hint": "در آمریکای جنوبی است",
+  "points": 15
+ },
+ {
+  "id": "t-m-010",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "geography",
+  "answer": "اورست",
+  "clue": "بلندترین قله جهان",
+  "hint": "در هیمالیا است",
+  "points": 15
+ },
+ {
+  "id": "t-m-011",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "geography",
+  "answer": "صحرا",
+  "clue": "بزرگ‌ترین بیابان گرم جهان",
+  "hint": "در شمال آفریقا است",
+  "points": 15
+ },
+ {
+  "id": "t-m-012",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "geography",
+  "answer": "کویر",
+  "clue": "بیابان خشک و شوره‌زار در مرکز ایران",
+  "hint": "لوت یکی از آن‌هاست",
+  "points": 15
+ },
+ {
+  "id": "t-m-013",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "مولوی",
+  "clue": "سراینده مثنوی معنوی",
+  "hint": "در قونیه آرمیده است",
+  "points": 15
+ },
+ {
+  "id": "t-m-014",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "نظامی",
+  "clue": "سراینده خمسه و لیلی و مجنون",
+  "hint": "اهل گنجه بود",
+  "points": 15
+ },
+ {
+  "id": "t-m-015",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "literature",
+  "answer": "پروین",
+  "clue": "شاعر زن ایرانی با دیوان مشهور",
+  "hint": "نام خانوادگی‌اش اعتصامی است",
+  "points": 15
+ },
+ {
+  "id": "t-m-016",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "ابوریحان",
+  "clue": "دانشمند ایرانی و نویسنده آثارالباقیه",
+  "hint": "بیرونی هم نامیده می‌شود",
+  "points": 15
+ },
+ {
+  "id": "t-m-017",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "رازی",
+  "clue": "پزشک ایرانی که الکل را شناخت",
+  "hint": "کتاب الحاوی را نوشت",
+  "points": 15
+ },
+ {
+  "id": "t-m-018",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "کوروش",
+  "clue": "بنیان‌گذار شاهنشاهی هخامنشی",
+  "hint": "منشور حقوق دارد",
+  "points": 15
+ },
+ {
+  "id": "t-m-019",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "داریوش",
+  "clue": "پادشاه هخامنشی که کاخ شوش را ساخت",
+  "hint": "کتیبه بیستون از اوست",
+  "points": 15
+ },
+ {
+  "id": "t-m-020",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "زردشت",
+  "clue": "پیامبر ایران باستان",
+  "hint": "اوستا را آورد",
+  "points": 15
+ },
+ {
+  "id": "t-m-021",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "پارسه",
+  "clue": "نام باستانی تخت جمشید",
+  "hint": "در فارس است",
+  "points": 15
+ },
+ {
+  "id": "t-m-022",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "مغول",
+  "clue": "قومی که در سده هفتم به ایران حمله کرد",
+  "hint": "چنگیز رهبرشان بود",
+  "points": 15
+ },
+ {
+  "id": "t-m-023",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "صفوی",
+  "clue": "سلسله‌ای که مذهب شیعه را رسمی کرد",
+  "hint": "اصفهان پایتختش بود",
+  "points": 15
+ },
+ {
+  "id": "t-m-024",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "history",
+  "answer": "قاجار",
+  "clue": "سلسله پیش از پهلوی",
+  "hint": "ناصرالدین‌شاه از آن‌هاست",
+  "points": 15
+ },
+ {
+  "id": "t-m-025",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "science",
+  "answer": "مغناطیس",
+  "clue": "خاصیت آهن‌ربا که فلزات را می‌کشد",
+  "hint": "قطب شمال و جنوب دارد",
+  "points": 15
+ },
+ {
+  "id": "t-m-026",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "science",
+  "answer": "اتم",
+  "clue": "کوچک‌ترین واحد سازنده ماده",
+  "hint": "همه مواد از آن ساخته شده‌اند",
+  "points": 15
+ },
+ {
+  "id": "t-m-027",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "science",
+  "answer": "پروتون",
+  "clue": "ذره مثبت درون هسته اتم",
+  "hint": "بار مثبت دارد",
+  "points": 15
+ },
+ {
+  "id": "t-m-028",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "science",
+  "answer": "الکتریسیته",
+  "clue": "انرژی‌ای که لامپ و دستگاه‌ها را روشن می‌کند",
+  "hint": "در سیم‌ها جاری است",
+  "points": 15
+ },
+ {
+  "id": "t-m-029",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "technology",
+  "answer": "برنامه",
+  "clue": "مجموعه دستورها برای اجرا روی رایانه",
+  "hint": "با کد نوشته می‌شود",
+  "points": 15
+ },
+ {
+  "id": "t-m-030",
+  "age": "teens",
+  "diff": "medium",
+  "topic": "technology",
+  "answer": "ربات",
+  "clue": "ماشین خودکار برنامه‌پذیر",
+  "hint": "کارهای تکراری را انجام می‌دهد",
+  "points": 15
+ },
+ {
   "id": "t-h-001",
   "age": "teens",
   "diff": "hard",
@@ -177,6 +657,246 @@
   "answer": "سعدی",
   "clue": "نویسنده گلستان و بوستان",
   "hint": "اهل شیراز است",
+  "points": 20
+ },
+ {
+  "id": "t-h-007",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "جذر",
+  "clue": "معکوس توان دو یک عدد",
+  "hint": "علامت رادیکال دارد",
+  "points": 20
+ },
+ {
+  "id": "t-h-008",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "لگاریتم",
+  "clue": "معکوس تابع نمایی",
+  "hint": "جان نپر آن را معرفی کرد",
+  "points": 20
+ },
+ {
+  "id": "t-h-009",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "هندسه",
+  "clue": "شاخه ریاضی درباره شکل‌ها و اندازه‌ها",
+  "hint": "اقلیدس پدرش است",
+  "points": 20
+ },
+ {
+  "id": "t-h-010",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "احتمال",
+  "clue": "شانس رخ دادن یک پیشامد",
+  "hint": "عددی بین صفر و یک است",
+  "points": 20
+ },
+ {
+  "id": "t-h-011",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "مثلث",
+  "clue": "شکلی با سه ضلع",
+  "hint": "مجموع زاویه‌هایش ۱۸۰ درجه است",
+  "points": 20
+ },
+ {
+  "id": "t-h-012",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "فوتون",
+  "clue": "ذره بنیادی نور",
+  "hint": "هم موج است هم ذره",
+  "points": 20
+ },
+ {
+  "id": "t-h-013",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "الکترون",
+  "clue": "ذره‌ای با بار منفی که دور هسته می‌چرخد",
+  "hint": "بسیار سبک است",
+  "points": 20
+ },
+ {
+  "id": "t-h-014",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "مولکول",
+  "clue": "ذره‌ای که از پیوند چند اتم ساخته می‌شود",
+  "hint": "آب نمونه‌ای از آن است",
+  "points": 20
+ },
+ {
+  "id": "t-h-015",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "هیدروژن",
+  "clue": "سبک‌ترین عنصر جدول تناوبی",
+  "hint": "نخستین عنصر جدول است",
+  "points": 20
+ },
+ {
+  "id": "t-h-016",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "کربن",
+  "clue": "عنصر اصلی زغال و الماس",
+  "hint": "عدد اتمی آن شش است",
+  "points": 20
+ },
+ {
+  "id": "t-h-017",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "آهن",
+  "clue": "فلزی که زنگ می‌زند و مغناطیسی است",
+  "hint": "نمادش Fe است",
+  "points": 20
+ },
+ {
+  "id": "t-h-018",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "سیارک",
+  "clue": "صخره کوچکی که دور خورشید می‌چرخد",
+  "hint": "کمربندش بین مریخ و مشتری است",
+  "points": 20
+ },
+ {
+  "id": "t-h-019",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "science",
+  "answer": "نجوم",
+  "clue": "دانش مطالعه اجرام آسمانی",
+  "hint": "رصدخانه دارد",
+  "points": 20
+ },
+ {
+  "id": "t-h-020",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "geography",
+  "answer": "زلزله",
+  "clue": "لرزش ناگهانی زمین",
+  "hint": "با مقیاس ریشتر سنجیده می‌شود",
+  "points": 20
+ },
+ {
+  "id": "t-h-021",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "geography",
+  "answer": "سونامی",
+  "clue": "موج غول‌پیکر ناشی از زلزله زیر دریا",
+  "hint": "ژاپنی است",
+  "points": 20
+ },
+ {
+  "id": "t-h-022",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "geography",
+  "answer": "اقلیم",
+  "clue": "وضعیت درازمدت آب‌وهوای یک منطقه",
+  "hint": "گرمایش جهانی آن را تغییر می‌دهد",
+  "points": 20
+ },
+ {
+  "id": "t-h-023",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "geography",
+  "answer": "جمعیت",
+  "clue": "تعداد ساکنان یک منطقه",
+  "hint": "سرشماری آن را می‌شمارد",
+  "points": 20
+ },
+ {
+  "id": "t-h-024",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "شاهنامه",
+  "clue": "اثر حماسی بزرگ فارسی",
+  "hint": "داستان رستم و سهراب دارد",
+  "points": 20
+ },
+ {
+  "id": "t-h-025",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "نیما",
+  "clue": "پدر شعر نو فارسی",
+  "hint": "یوشیج نام خانوادگی اوست",
+  "points": 20
+ },
+ {
+  "id": "t-h-026",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "تشبیه",
+  "clue": "آرایه‌ای که دو چیز را به هم مانند می‌کند",
+  "hint": "واژه «شبیه» از ریشه آن است",
+  "points": 20
+ },
+ {
+  "id": "t-h-027",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "literature",
+  "answer": "قافیه",
+  "clue": "واژه‌های هم‌آوا در پایان مصراع‌ها",
+  "hint": "در شعر هست",
+  "points": 20
+ },
+ {
+  "id": "t-h-028",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "history",
+  "answer": "سفیر",
+  "clue": "نماینده یک کشور در کشوری دیگر",
+  "hint": "در سفارت کار می‌کند",
+  "points": 20
+ },
+ {
+  "id": "t-h-029",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "geography",
+  "answer": "آزادی",
+  "clue": "نام برجی نمادین در تهران",
+  "hint": "در میدانی به همین نام است",
+  "points": 20
+ },
+ {
+  "id": "t-h-030",
+  "age": "teens",
+  "diff": "hard",
+  "topic": "geography",
+  "answer": "نیشابور",
+  "clue": "شهر خیام و عطار و فیروزه",
+  "hint": "در خراسان است",
   "points": 20
  }
 ]

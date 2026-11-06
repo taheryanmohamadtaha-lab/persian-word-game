@@ -60,6 +60,246 @@
   "points": 10
  },
  {
+  "id": "k-e-007",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "animals",
+  "answer": "سگ",
+  "clue": "حیوان وفاداری که واق واق می‌کند",
+  "hint": "دمش را تکان می‌دهد",
+  "points": 10
+ },
+ {
+  "id": "k-e-008",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "گل",
+  "clue": "در باغ می‌روید و بوی خوب دارد",
+  "hint": "رنگارنگ است",
+  "points": 10
+ },
+ {
+  "id": "k-e-009",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "توپ",
+  "clue": "با آن فوتبال بازی می‌کنیم",
+  "hint": "گرد است",
+  "points": 10
+ },
+ {
+  "id": "k-e-010",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "fruits",
+  "answer": "موز",
+  "clue": "میوه زرد و خمیده",
+  "hint": "پوستش را می‌کنیم",
+  "points": 10
+ },
+ {
+  "id": "k-e-011",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "food",
+  "answer": "شیر",
+  "clue": "نوشیدنی سفیدی که از گاو می‌گیریم",
+  "hint": "کلسیم دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-012",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "کفش",
+  "clue": "آن را در پا می‌کنیم",
+  "hint": "بند دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-013",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "خانه",
+  "clue": "جایی که خانواده در آن زندگی می‌کند",
+  "hint": "در و پنجره دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-014",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "ماشین",
+  "clue": "چهار چرخ دارد و ما را جابه‌جا می‌کند",
+  "hint": "فرمان دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-015",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "animals",
+  "answer": "مرغ",
+  "clue": "پرنده‌ای که تخم می‌گذارد",
+  "hint": "قدقد می‌کند",
+  "points": 10
+ },
+ {
+  "id": "k-e-016",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "ستاره",
+  "clue": "شب‌ها در آسمان چشمک می‌زند",
+  "hint": "کوچک و درخشان است",
+  "points": 10
+ },
+ {
+  "id": "k-e-017",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "body",
+  "answer": "دست",
+  "clue": "با آن چیزها را برمی‌داریم",
+  "hint": "پنج انگشت دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-018",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "body",
+  "answer": "چشم",
+  "clue": "با آن می‌بینیم",
+  "hint": "پلک دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-019",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "body",
+  "answer": "گوش",
+  "clue": "با آن صداها را می‌شنویم",
+  "hint": "دو تا داریم",
+  "points": 10
+ },
+ {
+  "id": "k-e-020",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "body",
+  "answer": "دندان",
+  "clue": "با آن غذا را می‌جویم",
+  "hint": "مسواک می‌خواهد",
+  "points": 10
+ },
+ {
+  "id": "k-e-021",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "باران",
+  "clue": "از ابرها می‌بارد",
+  "hint": "چتر لازم دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-022",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "برف",
+  "clue": "سفید و سرد است و زمستان‌ها می‌بارد",
+  "hint": "با آن آدم سفید درست می‌کنیم",
+  "points": 10
+ },
+ {
+  "id": "k-e-023",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "nature",
+  "answer": "درخت",
+  "clue": "ریشه و شاخه و برگ دارد",
+  "hint": "میوه می‌دهد",
+  "points": 10
+ },
+ {
+  "id": "k-e-024",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "animals",
+  "answer": "ماهی",
+  "clue": "در آب شنا می‌کند",
+  "hint": "باله دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-025",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "animals",
+  "answer": "اسب",
+  "clue": "حیوانی که شیهه می‌کشد و سواری می‌دهد",
+  "hint": "نعل دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-026",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "قاشق",
+  "clue": "با آن سوپ می‌خوریم",
+  "hint": "کنار چنگال است",
+  "points": 10
+ },
+ {
+  "id": "k-e-027",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "تخت",
+  "clue": "شب‌ها روی آن می‌خوابیم",
+  "hint": "بالش دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-028",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "لباس",
+  "clue": "آن را می‌پوشیم",
+  "hint": "پیراهن یکی از آن‌هاست",
+  "points": 10
+ },
+ {
+  "id": "k-e-029",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "پنجره",
+  "clue": "از آن بیرون را تماشا می‌کنیم",
+  "hint": "شیشه دارد",
+  "points": 10
+ },
+ {
+  "id": "k-e-030",
+  "age": "kids",
+  "diff": "easy",
+  "topic": "things",
+  "answer": "بادکنک",
+  "clue": "پر از هواست و اگر بترکد صدا می‌دهد",
+  "hint": "در جشن تولد هست",
+  "points": 10
+ },
+ {
   "id": "k-m-001",
   "age": "kids",
   "diff": "medium",
@@ -120,6 +360,246 @@
   "points": 15
  },
  {
+  "id": "k-m-007",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "animals",
+  "answer": "فیل",
+  "clue": "حیوان بسیار بزرگی با خرطوم",
+  "hint": "گوش‌های بزرگ دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-008",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "animals",
+  "answer": "شتر",
+  "clue": "حیوان کویر که کوهان دارد",
+  "hint": "بار می‌برد",
+  "points": 15
+ },
+ {
+  "id": "k-m-009",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "fruits",
+  "answer": "انار",
+  "clue": "میوه قرمز با دانه‌های یاقوتی",
+  "hint": "در شب یلدا هست",
+  "points": 15
+ },
+ {
+  "id": "k-m-010",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "fruits",
+  "answer": "انگور",
+  "clue": "میوه خوشه‌ای که از آن کشمش می‌سازند",
+  "hint": "سبز یا بنفش است",
+  "points": 15
+ },
+ {
+  "id": "k-m-011",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "fruits",
+  "answer": "پرتقال",
+  "clue": "میوه نارنجی که از آن آب‌میوه می‌گیرند",
+  "hint": "ویتامین سی دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-012",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "school",
+  "answer": "کلاس",
+  "clue": "جایی در مدرسه که در آن درس می‌خوانیم",
+  "hint": "میز و نیمکت دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-013",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "school",
+  "answer": "معلم",
+  "clue": "کسی که در مدرسه به ما درس می‌دهد",
+  "hint": "پای تخته می‌ایستد",
+  "points": 15
+ },
+ {
+  "id": "k-m-014",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "school",
+  "answer": "نقاشی",
+  "clue": "با رنگ و کاغذ آن را می‌کشیم",
+  "hint": "مداد رنگی می‌خواهد",
+  "points": 15
+ },
+ {
+  "id": "k-m-015",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "دوچرخه",
+  "clue": "دو چرخ دارد و با پا حرکت می‌کند",
+  "hint": "پدال دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-016",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "هواپیما",
+  "clue": "در آسمان پرواز می‌کند و مسافر می‌برد",
+  "hint": "بال دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-017",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "قطار",
+  "clue": "روی ریل حرکت می‌کند",
+  "hint": "واگن دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-018",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "کشتی",
+  "clue": "روی دریا حرکت می‌کند",
+  "hint": "ناخدا دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-019",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "عروسک",
+  "clue": "اسباب‌بازی‌ای که شبیه آدم است",
+  "hint": "با آن بازی می‌کنیم",
+  "points": 15
+ },
+ {
+  "id": "k-m-020",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "animals",
+  "answer": "جغد",
+  "clue": "پرنده‌ای که شب‌ها بیدار است",
+  "hint": "چشم‌های گرد دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-021",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "animals",
+  "answer": "طوطی",
+  "clue": "پرنده رنگارنگی که حرف‌ها را تکرار می‌کند",
+  "hint": "منقار خمیده دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-022",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "animals",
+  "answer": "خرگوش",
+  "clue": "حیوانی با گوش بلند که هویج دوست دارد",
+  "hint": "جست‌وخیز می‌کند",
+  "points": 15
+ },
+ {
+  "id": "k-m-023",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "animals",
+  "answer": "لاکپشت",
+  "clue": "حیوان کندی که خانه‌اش روی پشتش است",
+  "hint": "لاک سخت دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-024",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "عینک",
+  "clue": "برای دیدن بهتر روی چشم می‌گذاریم",
+  "hint": "شیشه دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-025",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "ساعت",
+  "clue": "زمان را نشان می‌دهد",
+  "hint": "عقربه دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-026",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "تلفن",
+  "clue": "با آن از راه دور با دوستان حرف می‌زنیم",
+  "hint": "زنگ می‌خورد",
+  "points": 15
+ },
+ {
+  "id": "k-m-027",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "شانه",
+  "clue": "با آن موها را مرتب می‌کنیم",
+  "hint": "دندانه دارد",
+  "points": 15
+ },
+ {
+  "id": "k-m-028",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "صابون",
+  "clue": "با آن دست‌ها را می‌شوییم",
+  "hint": "کف می‌کند",
+  "points": 15
+ },
+ {
+  "id": "k-m-029",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "things",
+  "answer": "چراغ",
+  "clue": "شب‌ها اتاق را روشن می‌کند",
+  "hint": "برق می‌خواهد",
+  "points": 15
+ },
+ {
+  "id": "k-m-030",
+  "age": "kids",
+  "diff": "medium",
+  "topic": "nature",
+  "answer": "آسمان",
+  "clue": "بالای سر ماست و آبی است",
+  "hint": "ابر و ستاره دارد",
+  "points": 15
+ },
+ {
   "id": "k-h-001",
   "age": "kids",
   "diff": "hard",
@@ -177,6 +657,246 @@
   "answer": "کفشدوزک",
   "clue": "حشره‌ای کوچک، قرمز با خال‌های سیاه",
   "hint": "هفت حرفی است",
+  "points": 20
+ },
+ {
+  "id": "k-h-007",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "زنبور",
+  "clue": "حشره‌ای که عسل می‌سازد و نیش می‌زند",
+  "hint": "در کندو زندگی می‌کند",
+  "points": 20
+ },
+ {
+  "id": "k-h-008",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "عنکبوت",
+  "clue": "با تار خودش تله می‌سازد",
+  "hint": "هشت پا دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-009",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "دلفین",
+  "clue": "پستاندار باهوش دریایی که از آب بیرون می‌پرد",
+  "hint": "ماهی نیست",
+  "points": 20
+ },
+ {
+  "id": "k-h-010",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "میمون",
+  "clue": "حیوانی که از درخت بالا می‌رود و موز دوست دارد",
+  "hint": "دم بلند دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-011",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "خفاش",
+  "clue": "پستانداری که شب‌ها پرواز می‌کند",
+  "hint": "وارونه آویزان می‌شود",
+  "points": 20
+ },
+ {
+  "id": "k-h-012",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "لکلک",
+  "clue": "پرنده‌ای با پاهای بلند و منقار بلند",
+  "hint": "روی بام آشیانه می‌سازد",
+  "points": 20
+ },
+ {
+  "id": "k-h-013",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "سنجاب",
+  "clue": "جانوری با دم پرپشت که گردو جمع می‌کند",
+  "hint": "از درخت بالا می‌رود",
+  "points": 20
+ },
+ {
+  "id": "k-h-014",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "تلسکوپ",
+  "clue": "با آن ستاره‌ها را از نزدیک می‌بینیم",
+  "hint": "لوله و عدسی دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-015",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "میکروسکوپ",
+  "clue": "چیزهای بسیار ریز را بزرگ نشان می‌دهد",
+  "hint": "در آزمایشگاه است",
+  "points": 20
+ },
+ {
+  "id": "k-h-016",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "چکش",
+  "clue": "با آن میخ می‌کوبیم",
+  "hint": "دسته چوبی دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-017",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "قیچی",
+  "clue": "با آن کاغذ را می‌بریم",
+  "hint": "دو تیغه دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-018",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "نقشه",
+  "clue": "شهر یا کشور را روی کاغذ نشان می‌دهد",
+  "hint": "راهنمای مسافر است",
+  "points": 20
+ },
+ {
+  "id": "k-h-019",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "گلدان",
+  "clue": "گیاه را در آن می‌کاریم",
+  "hint": "خاک دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-020",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "آیینه",
+  "clue": "خودمان را در آن می‌بینیم",
+  "hint": "سطح صاف و براق دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-021",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "کلید",
+  "clue": "با آن در را باز می‌کنیم",
+  "hint": "قفل لازم دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-022",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "چمدان",
+  "clue": "در سفر لباس‌ها را در آن می‌گذاریم",
+  "hint": "چرخ و دسته دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-023",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "school",
+  "answer": "کتابخانه",
+  "clue": "جایی پر از کتاب برای امانت گرفتن",
+  "hint": "سکوت لازم دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-024",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "food",
+  "answer": "بستنی",
+  "clue": "خوراکی سرد و شیرین تابستان",
+  "hint": "قیفی هم دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-025",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "food",
+  "answer": "شکلات",
+  "clue": "خوراکی شیرین که از کاکائو درست می‌شود",
+  "hint": "قهوه‌ای است",
+  "points": 20
+ },
+ {
+  "id": "k-h-026",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "نردبان",
+  "clue": "برای بالا رفتن از دیوار به کار می‌رود",
+  "hint": "پله دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-027",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "things",
+  "answer": "جاده",
+  "clue": "ماشین‌ها روی آن حرکت می‌کنند",
+  "hint": "آسفالت دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-028",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "nature",
+  "answer": "کوه",
+  "clue": "برآمدگی بسیار بزرگ زمین",
+  "hint": "قله دارد",
+  "points": 20
+ },
+ {
+  "id": "k-h-029",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "nature",
+  "answer": "جنگل",
+  "clue": "پر از درخت و حیوانات وحشی",
+  "hint": "سبز و انبوه است",
+  "points": 20
+ },
+ {
+  "id": "k-h-030",
+  "age": "kids",
+  "diff": "hard",
+  "topic": "animals",
+  "answer": "ققنوس",
+  "clue": "پرنده افسانه‌ای که از خاکستر دوباره زنده می‌شود",
+  "hint": "در داستان‌ها هست",
   "points": 20
  }
 ]

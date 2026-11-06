@@ -4,7 +4,7 @@ extends Control
 
 func _draw() -> void:
 	var sb := StyleBoxFlat.new()
-	sb.bg_color = Color("8f2f24")
+	sb.bg_color = UI.col("carpet")
 	sb.set_corner_radius_all(30)
 	sb.set_border_width_all(10)
 	sb.border_color = Color("6b4a2a")

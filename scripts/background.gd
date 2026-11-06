@@ -2,12 +2,6 @@ class_name Background
 extends Control
 ## پس‌زمینهٔ زنده: گرادیان رنگی، حاشیهٔ کاشی‌کاری و حباب‌های شناور. پالت با مرحله عوض می‌شود.
 
-const PALETTES := [
-	[Color("f8cf9d"), Color("eeb27a"), Color("5b6b4a")],
-	[Color("c6e8ef"), Color("93c9db"), Color("2f6275")],
-	[Color("e6d8f4"), Color("c3a8e0"), Color("5a3f7a")],
-	[Color("daf1c8"), Color("a9d584"), Color("3f6a2a")],
-]
 var pal := 0
 var blobs: Array = []
 
@@ -18,7 +12,8 @@ func _ready() -> void:
 	set_process(UI.particles() > 0.0)
 
 func set_palette(i: int) -> void:
-	pal = posmod(i, PALETTES.size())
+	pal = i
+	UI._root().get_node("Game").auto_idx = i
 	queue_redraw()
 
 func _process(delta: float) -> void:
@@ -30,7 +25,8 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	var c: Array = PALETTES[pal]
+	var th := UI.theme()
+	var c: Array = [th["bg0"], th["bg1"], th["border"]]
 	var s := size
 	draw_polygon(PackedVector2Array([Vector2.ZERO, Vector2(s.x, 0), s, Vector2(0, s.y)]),
 		PackedColorArray([c[0], c[0], c[1], c[1]]))

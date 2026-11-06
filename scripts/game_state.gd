@@ -8,6 +8,16 @@ const AGES := {"kids": "کودکان", "teens": "نوجوانان", "adults": "�
 const DIFFS := {"easy": "آسان", "medium": "متوسط", "hard": "سخت"}
 const DIFF_MULT := {"easy": 1.0, "medium": 1.5, "hard": 2.0}
 const ALPHABET: Array[String] = ["آ","ا","ب","پ","ت","ث","ج","چ","ح","خ","د","ذ","ر","ز","ژ","س","ش","ص","ض","ط","ظ","ع","غ","ف","ق","ک","گ","ل","م","ن","و","ه","ی"]
+const CREATOR := "محمدطاها طاهریان"
+const THEME_ORDER := ["warm", "ocean", "violet", "forest", "rose"]
+const THEMES := {
+	"warm": {"name": "شنی گرم", "bg0": Color("f8cf9d"), "bg1": Color("eeb27a"), "border": Color("5b6b4a"), "primary": Color("6fbf5a"), "secondary": Color("d9b36a"), "letter": Color("ead6a4"), "carpet": Color("8f2f24")},
+	"ocean": {"name": "اقیانوس", "bg0": Color("c6e8ef"), "bg1": Color("93c9db"), "border": Color("2f6275"), "primary": Color("49b0d4"), "secondary": Color("9ccfe0"), "letter": Color("e3f2f7"), "carpet": Color("1f5f7a")},
+	"violet": {"name": "بنفشه", "bg0": Color("e6d8f4"), "bg1": Color("c3a8e0"), "border": Color("5a3f7a"), "primary": Color("a678de"), "secondary": Color("cdb6ea"), "letter": Color("f1e8fa"), "carpet": Color("5b2f7a")},
+	"forest": {"name": "جنگل", "bg0": Color("daf1c8"), "bg1": Color("a9d584"), "border": Color("3f6a2a"), "primary": Color("55b24e"), "secondary": Color("b5d98f"), "letter": Color("eef6dc"), "carpet": Color("2f6a3a")},
+	"rose": {"name": "گل‌سرخی", "bg0": Color("fbd5e3"), "bg1": Color("f3a6c3"), "border": Color("9a3a63"), "primary": Color("ee6e98"), "secondary": Color("f5b5cb"), "letter": Color("fde8ef"), "carpet": Color("a02a55")},
+}
+const MUSIC_TRACKS := [["shuffle", "تصادفی"], ["calm", "آرام"], ["oriental", "شرقی"], ["happy", "شاد"], ["adventure", "ماجرا"], ["piano", "پیانو"]]
 const HINT_COST := 5
 const SKIP_COST := 10
 const ACH := {
@@ -20,11 +30,13 @@ const ACH := {
 }
 
 var questions: Array = []
-var settings := {"music": true, "sfx": true, "voice": true, "music_vol": 0.6, "sfx_vol": 0.9, "voice_vol": 0.9, "quality": "high"}
+var settings := {"character": "kolah", "theme": "warm", "music_mode": "shuffle", "music": true, "sfx": true, "voice": true, "music_vol": 0.6, "sfx_vol": 0.9, "voice_vol": 0.9, "quality": "high"}
 var coins := 20
 var total_score := 0
 var progress := {}   # "kids_easy" -> {"unlocked": 1, "stars": {"1": 3}, "best": {"1": 120}}
 var achievements := {}
+var seen := {}       # "kids_easy" -> [شناسه سؤال‌هایی که اخیراً پرسیده شده]
+var auto_idx := 0     # برای تم خودکار
 var last := {}       # {"age","diff","level"} آخرین مرحله برای ادامه بازی
 var cur_age := "kids"
 var cur_diff := "easy"
@@ -77,6 +89,34 @@ func levels_for(age: String, diff: String) -> Array:
 		out.append(pool.slice(i, i + LEVEL_SIZE))
 		i += LEVEL_SIZE
 	return out
+
+## سؤال‌های یک مرحله را هر بار تصادفی و بدون تکرار انتخاب می‌کند.
+## تا وقتی سؤال دیده‌نشده هست از همان‌ها می‌آید؛ وقتی همه پرسیده شدند، چرخهٔ تازه شروع می‌شود.
+func pick_level_questions(age: String, diff: String) -> Array:
+	var pool: Array = questions.filter(func(q): return q["age"] == age and q["diff"] == diff)
+	var k := key(age, diff)
+	var seen_ids: Array = seen.get(k, [])
+	var unseen: Array = pool.filter(func(q): return not seen_ids.has(q["id"]))
+	unseen.shuffle()
+	var picked: Array = unseen.slice(0, LEVEL_SIZE)
+	if picked.size() < LEVEL_SIZE:
+		var ids: Array = picked.map(func(q): return q["id"])
+		var rest: Array = pool.filter(func(q): return not ids.has(q["id"]))
+		rest.shuffle()
+		picked.append_array(rest.slice(0, LEVEL_SIZE - picked.size()))
+		seen[k] = picked.map(func(q): return q["id"])
+	else:
+		seen_ids.append_array(picked.map(func(q): return q["id"]))
+		seen[k] = seen_ids
+	picked.shuffle()
+	save()
+	return picked
+
+func theme() -> Dictionary:
+	var id: String = settings.get("theme", "warm")
+	if id == "auto" or not THEMES.has(id):
+		id = THEME_ORDER[posmod(auto_idx, THEME_ORDER.size())]
+	return THEMES[id]
 
 func level_count(age: String, diff: String) -> int:
 	return levels_for(age, diff).size()
@@ -145,7 +185,7 @@ func particles_scale() -> float:
 # ---------- ذخیره ----------
 func save() -> void:
 	var data := {"settings": settings, "coins": coins, "total_score": total_score,
-		"progress": progress, "achievements": achievements, "last": last}
+		"progress": progress, "achievements": achievements, "last": last, "seen": seen}
 	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if f:
 		f.store_string(JSON.stringify(data))
@@ -162,6 +202,7 @@ func load_save() -> void:
 	progress = d.get("progress", {})
 	achievements = d.get("achievements", {})
 	last = d.get("last", {})
+	seen = d.get("seen", {})
 
 func reset_all() -> void:
 	coins = 20
@@ -169,4 +210,5 @@ func reset_all() -> void:
 	progress = {}
 	achievements = {}
 	last = {}
+	seen = {}
 	save()

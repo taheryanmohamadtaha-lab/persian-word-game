@@ -32,17 +32,82 @@ func _run() -> void:
 			check(game.level_count(age, diff) >= 6, "%s/%s حداقل ۶ مرحله دارد" % [age, diff])
 	print("== صفحه‌ها")
 	for s in [["start", {}], ["choice", {"kind": "age"}], ["choice", {"kind": "diff"}], ["map", {}],
-			["achievements", {}], ["settings", {}], ["help", {}]]:
+			["achievements", {}], ["settings", {}], ["help", {}], ["appearance", {}]]:
 		main.go(s[0], s[1])
 		await process_frame
 		await process_frame
 		check(is_instance_valid(main.cur) and main.cur.get_child_count() > 0, "صفحهٔ %s ساخته شد" % s[0])
+	print("== سؤال‌های تصادفی و بدون تکرار")
+	var a: Array = game.pick_level_questions("teens", "easy")
+	var b: Array = game.pick_level_questions("teens", "easy")
+	var ids_a: Array = a.map(func(q): return q["id"])
+	var ids_b: Array = b.map(func(q): return q["id"])
+	var overlap := 0
+	for i in ids_b:
+		if ids_a.has(i):
+			overlap += 1
+	check(a.size() == 5 and b.size() == 5 and overlap == 0, "دو شروع پشت‌سرهم: سؤال‌ها کاملاً متفاوت‌اند")
+	var all_ok := true
+	for k in 12:
+		var c: Array = game.pick_level_questions("teens", "easy")
+		var uniq := {}
+		for q in c:
+			uniq[q["id"]] = true
+		if c.size() != 5 or uniq.size() != 5:
+			all_ok = false
+	check(all_ok, "پس از تمام شدن سؤال‌ها هم هر مرحله ۵ سؤال غیرتکراری دارد")
+	var order_differs := false
+	var first: Array = game.pick_level_questions("adults", "hard").map(func(q): return q["id"])
+	for k in 5:
+		if game.pick_level_questions("adults", "hard").map(func(q): return q["id"]) != first:
+			order_differs = true
+	check(order_differs, "ترکیب سؤال‌ها هر بار فرق می‌کند")
+	game.seen = {}
+	print("== شخصیت‌ها، تم و موسیقی")
+	for ch in ["kolah", "haji", "mamad", "babri"]:
+		var ok := true
+		for key in ["greet", "correct", "wrong", "progress", "last", "one_orb", "over", "no_coins", "idle", "skip", "win3", "win"]:
+			if Dialogs.line(key, ch) == "":
+				ok = false
+		check(ok and Dialogs.char_name(ch) != "", "شخصیت %s: همهٔ دیالوگ‌ها موجود است" % ch)
+		game.settings["character"] = ch
+		main.go("start")
+		await process_frame
+		check(is_instance_valid(main.cur) and main.cur.get_child_count() > 0, "صفحهٔ شروع با شخصیت %s" % ch)
+	game.settings["character"] = "kolah"
+	game.settings["theme"] = "auto"
+	var t0: Color = game.theme()["bg0"]
+	game.auto_idx = 1
+	check(game.theme()["bg0"] != t0, "تم خودکار با مرحله عوض می‌شود")
+	for tid in game.THEMES:
+		game.settings["theme"] = tid
+		check(game.theme()["name"] == game.THEMES[tid]["name"], "تم %s" % tid)
+	game.settings["theme"] = "warm"
+	game.auto_idx = 0
+	for t in game.MUSIC_TRACKS:
+		game.settings["music_mode"] = t[0]
+		root.get_node("Sfx").music_change()
+		if t[0] != "shuffle":
+			check(root.get_node("Sfx").current_track() == t[0], "پخش آهنگ %s" % t[0])
+		else:
+			check(root.get_node("Sfx").current_track() != "", "حالت تصادفی آهنگی انتخاب کرد")
+	game.settings["music_mode"] = "shuffle"
+	print("== دکمهٔ خروج")
+	main.go("start")
+	await process_frame
+	main.ask_exit()
+	check(main.exit_overlay != null, "پنجرهٔ تأیید خروج باز شد")
+	main.close_exit()
+	check(main.exit_overlay == null, "ادامهٔ بازی پنجره را بست")
 	print("== بازی کودکان/آسان مرحله ۱")
 	main.go("game", {"age": "kids", "diff": "easy", "level": 1})
 	await process_frame
 	await process_frame
 	var g = main.cur
 	check(g.qs.size() == 5 and g.boxes.size() == g.answer.size(), "مرحله (۵ سؤال) و خانه‌ها ساخته شد")
+	for q in game.questions:
+		if q["id"] == "k-e-004":
+			g.qs[3] = q
 	check(g.letters_root.get_child_count() == 33, "همهٔ ۳۳ حرف الفبا نمایش داده می‌شود")
 	check(g.orbs.total == 6, "سطح آسان: ۶ گوی")
 	# حرف اشتباه

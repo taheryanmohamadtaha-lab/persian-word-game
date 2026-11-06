@@ -9,6 +9,7 @@ func build() -> void:
 	var yy := 110.0
 	yy = _toggle("موسیقی", "music", yy)
 	yy = _slider("music_vol", yy)
+	yy = _music_modes(yy)
 	yy = _toggle("جلوه‌های صوتی", "sfx", yy)
 	yy = _slider("sfx_vol", yy)
 	yy = _toggle("صدای شخصیت", "voice", yy)
@@ -18,17 +19,17 @@ func build() -> void:
 	for i in 3:
 		var q: String = qs[i][0]
 		var on: bool = Game.settings["quality"] == q
-		var b := UI.button(self, qs[i][1], Vector2(x(30 + (2 - i) * 120), yy), Vector2(110, 56), Color("6fbf5a") if on else Color("d9b36a"), 24)
+		var b := UI.button(self, qs[i][1], Vector2(x(30 + (2 - i) * 120), yy), Vector2(110, 56), UI.col("primary") if on else UI.col("secondary"), 24)
 		b.pressed.connect(func():
 			Game.settings["quality"] = q
 			Game.apply_quality()
 			Game.save()
 			main.go("settings"))
-	yy += 90.0
-	var lang := UI.button(self, "زبان: فارسی (زبان‌های بیشتر به‌زودی)", Vector2(x(30), yy), Vector2(660, 64), Color("b8b0a4"), 24)
+	yy += 80.0
+	var lang := UI.button(self, "زبان: فارسی (زبان‌های بیشتر به‌زودی)", Vector2(x(30), yy), Vector2(660, 60), Color("b8b0a4"), 24)
 	lang.disabled = true
-	yy += 90.0
-	var rb := UI.button(self, "بازنشانی اطلاعات بازی", Vector2(x(30), yy), Vector2(660, 74), Color("d9826a"), 28)
+	yy += 76.0
+	var rb := UI.button(self, "بازنشانی اطلاعات بازی", Vector2(x(30), yy), Vector2(660, 70), Color("d9826a"), 28)
 	rb.pressed.connect(func():
 		if not reset_armed:
 			reset_armed = true
@@ -40,16 +41,33 @@ func build() -> void:
 		else:
 			Game.reset_all()
 			main.go("start"))
+	UI.label(self, "سازنده: %s" % Game.CREATOR, Vector2(x(60), H - 80.0), Vector2(600, 44), 26, Color("2f4a5a"))
+
+func _music_modes(yy: float) -> float:
+	var tracks: Array = Game.MUSIC_TRACKS
+	var w := 100.0
+	var gap := 4.0
+	var total := tracks.size() * w + (tracks.size() - 1) * gap
+	for i in tracks.size():
+		var id: String = tracks[i][0]
+		var on: bool = Game.settings["music_mode"] == id
+		var b := UI.button(self, tracks[i][1], Vector2(x(360) + total / 2.0 - w - i * (w + gap), yy), Vector2(w, 56), UI.col("primary") if on else UI.col("secondary"), 21)
+		b.pressed.connect(func():
+			Game.settings["music_mode"] = id
+			Game.save()
+			Sfx.music_change()
+			main.go("settings"))
+	return yy + 74.0
 
 func _toggle(title: String, key: String, yy: float) -> float:
 	var on: bool = Game.settings[key]
-	var b := UI.button(self, "%s: %s" % [title, "روشن" if on else "خاموش"], Vector2(x(30), yy), Vector2(660, 64), Color("6fbf5a") if on else Color("c8bfae"), 28)
+	var b := UI.button(self, "%s: %s" % [title, "روشن" if on else "خاموش"], Vector2(x(30), yy), Vector2(660, 62), UI.col("primary") if on else Color("c8bfae"), 28)
 	b.pressed.connect(func():
 		Game.settings[key] = not Game.settings[key]
 		Game.save()
 		Sfx.music_refresh()
 		main.go("settings"))
-	return yy + 76.0
+	return yy + 72.0
 
 func _slider(key: String, yy: float) -> float:
 	var s := HSlider.new()
@@ -61,8 +79,8 @@ func _slider(key: String, yy: float) -> float:
 	s.size = Vector2(600, 40)
 	s.focus_mode = Control.FOCUS_NONE
 	var track := UI.style(Color(0.35, 0.25, 0.15, 0.5), 8)
-	var fill := UI.style(Color("6fbf5a"), 8)
-	var fill_h := UI.style(Color("8bd876"), 8)
+	var fill := UI.style(UI.col("primary"), 8)
+	var fill_h := UI.style(UI.col("primary").lightened(0.15), 8)
 	for sb in [track, fill, fill_h]:
 		sb.content_margin_top = 8.0
 		sb.content_margin_bottom = 8.0
@@ -76,4 +94,4 @@ func _slider(key: String, yy: float) -> float:
 		Game.save()
 		Sfx.music_refresh())
 	add_child(s)
-	return yy + 56.0
+	return yy + 52.0

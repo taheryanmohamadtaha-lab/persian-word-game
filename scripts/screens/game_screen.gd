@@ -4,12 +4,6 @@ extends Screen
 const BOX := 88.0
 const GAP := 12.0
 const ORBS := {"easy": 6, "medium": 5, "hard": 5}
-const DIALOGS := {
-	"wrong": ["ای بابا! این یکی درست نبود!", "یه بار دیگه امتحان کن!", "نه نه! یه کم بیشتر فکر کن!", "نزدیک بودی! دوباره تلاش کن!"],
-	"correct": ["آفرین! درست گفتی!", "باریکلا! چه باهوشی!", "عالی بود! بریم سراغ بعدی!", "آفرین قهرمان!"],
-	"progress": ["تو داری عالی پیش می‌ری!", "ببینم این یکی رو هم می‌تونی حل کنی؟", "حواست رو جمع کن، سرنخ رو دقیق بخون!"],
-}
-
 var age := "kids"
 var diff := "easy"
 var level := 1
@@ -57,7 +51,7 @@ func build() -> void:
 		return
 	Game.cur_age = age
 	Game.cur_diff = diff
-	qs = lv[level - 1]
+	qs = Game.pick_level_questions(age, diff)
 	main.bg.set_palette(level)
 	Game.last = {"age": age, "diff": diff, "level": level}
 	Game.save()
@@ -87,7 +81,7 @@ func build() -> void:
 	orbs.reset(ORBS[diff])
 	orbs.position = Vector2(x(360) - orbs.size.x / 2.0, 536.0)
 	add_child(orbs)
-	hero = Hero.new()
+	hero = UI.make_hero()
 	hero.scale = Vector2(0.9, 0.9)
 	hero.position = Vector2(x(0), 612.0 + yextra * 0.4)
 	add_child(hero)
@@ -100,7 +94,7 @@ func build() -> void:
 	add_child(letters_root)
 	# نوار دکمه‌های پایین
 	var ay := 1180.0 + yextra
-	var hb := UI.button(self, "راهنما\n%s سکه" % UI.fa(Game.HINT_COST), Vector2(x(370), ay), Vector2(320, 80), Color("6fbf5a"), 24)
+	var hb := UI.button(self, "راهنما\n%s سکه" % UI.fa(Game.HINT_COST), Vector2(x(370), ay), Vector2(320, 80), UI.col("primary"), 24)
 	hb.pressed.connect(_hint)
 	var sb := UI.button(self, "عبور\n−%s امتیاز" % UI.fa(Game.SKIP_COST), Vector2(x(30), ay), Vector2(320, 80), Color("d9826a"), 24)
 	sb.pressed.connect(_skip)
@@ -112,7 +106,7 @@ func _process(delta: float) -> void:
 	idle += delta
 	if idle > 18.0:
 		idle = 0.0
-		say("هوم... بذار با هم فکر کنیم!", "thinking", 3.0)
+		say(Dialogs.line("idle"), "thinking", 3.0)
 	if diff == "hard":
 		time_left -= delta
 		timer_label.text = UI.fa(maxi(0, int(ceil(time_left))))
@@ -151,11 +145,11 @@ func load_question() -> void:
 	build_letters()
 	refresh_stats()
 	if qi == 0:
-		say("ببینم این مرحله رو هم می‌تونی حل کنی؟", "encourage")
+		say(Dialogs.line("greet" if qi == 0 else "progress"), "encourage")
 	elif qs.size() - qi == 1:
-		say("فقط یه کلمه دیگه مونده!", "encourage")
+		say(Dialogs.line("last"), "encourage")
 	else:
-		say(DIALOGS["progress"].pick_random(), "normal", 2.0)
+		say(Dialogs.line("progress"), "normal", 2.0)
 
 func build_boxes() -> void:
 	for c in boxes_root.get_children():
@@ -199,7 +193,7 @@ func build_letters() -> void:
 		var row_w := cnt * pitch - (pitch - sz)
 		var px := x(360) + row_w / 2.0 - sz - c * pitch
 		var ch: String = all[i]
-		var b := UI.button(letters_root, ch, Vector2(px, top + r * pitch), Vector2(sz, sz), Color("ead6a4"), 38, false)
+		var b := UI.button(letters_root, ch, Vector2(px, top + r * pitch), Vector2(sz, sz), UI.col("letter"), 38, false)
 		b.pressed.connect(_on_letter.bind(ch))
 		letter_btns[ch] = b
 
@@ -249,7 +243,7 @@ func _hint() -> void:
 	if locked:
 		return
 	if Game.coins < Game.HINT_COST:
-		say("سکه‌هات کافی نیست! چند تا سؤال دیگه حل کن.", "sad", 2.5)
+		say(Dialogs.line("no_coins"), "sad", 2.5)
 		return
 	var missing: Array = []
 	for i in answer.size():
@@ -276,9 +270,9 @@ func _break_orb() -> void:
 		return
 	var left := orbs.total - q_wrong
 	if left == 1:
-		say("وای! فقط یه گوی مونده، مواظب باش!", "surprised", 2.2)
+		say(Dialogs.line("one_orb"), "surprised", 2.2)
 	else:
-		say(DIALOGS["wrong"].pick_random(), "sad", 1.8)
+		say(Dialogs.line("wrong"), "sad", 1.8)
 
 func _game_over() -> void:
 	locked = true
@@ -286,7 +280,7 @@ func _game_over() -> void:
 	for i in answer.size():
 		if filled[i] == "":
 			set_box(i, answer[i], Color("e8a09a"))
-	say("ای بابا! همهٔ گوی‌ها شکستند. بیا از اول شروع کنیم!", "sad", 5.0)
+	say(Dialogs.line("over"), "sad", 5.0)
 	await get_tree().create_timer(1.8).timeout
 	if not is_inside_tree():
 		return
@@ -304,9 +298,9 @@ func _game_over() -> void:
 	UI.label(panel, "همهٔ گوی‌ها شکستند!", Vector2(0, 24), Vector2(600, 80), 46, Color("a03020"))
 	UI.label(panel, "جواب این بود: %s" % "".join(answer), Vector2(20, 120), Vector2(560, 70), 36)
 	UI.label(panel, "مرحله از اول شروع می‌شود.", Vector2(20, 195), Vector2(560, 56), 28)
-	var again := UI.button(panel, "شروع دوباره", Vector2(80, 270), Vector2(440, 84), Color("6fbf5a"), 38)
+	var again := UI.button(panel, "شروع دوباره", Vector2(80, 270), Vector2(440, 84), UI.col("primary"), 38)
 	again.pressed.connect(func(): main.go("game", {"age": age, "diff": diff, "level": level}))
-	var mp := UI.button(panel, "نقشه مرحله‌ها", Vector2(80, 366), Vector2(440, 70), Color("d9b36a"), 30)
+	var mp := UI.button(panel, "نقشه مرحله‌ها", Vector2(80, 366), Vector2(440, 70), UI.col("secondary"), 30)
 	mp.pressed.connect(func(): main.go("map"))
 	UI.pop(panel, 0.85)
 
@@ -334,7 +328,7 @@ func _on_correct() -> void:
 	Sfx.play("coin")
 	burst(Vector2(x(360), 410))
 	float_text("+%s" % UI.fa(pts), Vector2(x(360) - 60.0, 330))
-	say(DIALOGS["correct"].pick_random(), "excited" if streak >= 2 else "happy", 2.0)
+	say(Dialogs.line("correct"), "excited" if streak >= 2 else "happy", 2.0)
 	refresh_stats()
 	if Game.grant("first_word"):
 		toast("دستاورد: اولین کلمه")
@@ -358,7 +352,7 @@ func _skip() -> void:
 	_reveal_answer()
 	cups.left = qs.size() - qi - 1
 	refresh_stats()
-	say("جواب این بود: %s" % "".join(answer), "surprised", 2.5)
+	say("%s جواب این بود: %s" % [Dialogs.line("skip"), "".join(answer)], "surprised", 2.5)
 	await get_tree().create_timer(2.2).timeout
 	if is_inside_tree():
 		_next()

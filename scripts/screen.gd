@@ -25,7 +25,7 @@ func x(v: float) -> float:
 	return ox + v
 
 func back_button(target: String, target_args: Dictionary = {}) -> Button:
-	var b := UI.button(self, "بازگشت", Vector2(x(40), 36), Vector2(120, 60), Color("d9b36a"), 24)
+	var b := UI.button(self, "بازگشت", Vector2(x(40), 36), Vector2(120, 60), UI.col("secondary"), 24)
 	b.pressed.connect(func(): main.go(target, target_args))
 	return b
 

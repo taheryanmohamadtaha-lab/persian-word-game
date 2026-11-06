@@ -18,7 +18,7 @@ func build() -> void:
 	sv.setup(110.0, stars, true)
 	sv.position = Vector2(x(360) - sv.size.x / 2.0, top + 120.0)
 	add_child(sv)
-	var hero := Hero.new()
+	var hero := UI.make_hero()
 	hero.position = Vector2(x(10), 420)
 	hero.scale = Vector2(1.3, 1.3)
 	add_child(hero)
@@ -33,20 +33,20 @@ func build() -> void:
 	bubble.size = Vector2(340, 110)
 	bubble.position = Vector2(x(320), 760)
 	add_child(bubble)
-	bubble.say("آفرین قهرمان! تو واقعاً گنجینه رو پیدا کردی!" if stars == 3 else "خیلی خوب بود! دفعه بعد بهتر هم می‌شه!")
+	bubble.say(Dialogs.line("win3" if stars == 3 else "win"))
 	var y := maxf(920.0, H - 330.0)
 	if not is_last:
-		var nb := UI.button(self, "مرحلهٔ بعد", Vector2(x(150), y), Vector2(420, 90), Color("6fbf5a"), 40)
+		var nb := UI.button(self, "مرحلهٔ بعد", Vector2(x(150), y), Vector2(420, 90), UI.col("primary"), 40)
 		nb.pressed.connect(func(): main.go("game", {"age": age, "diff": diff, "level": level + 1}))
 		Sfx.play("unlock")
 		y += 106.0
 	else:
-		var ob := UI.button(self, "انتخاب بخش دیگر", Vector2(x(150), y), Vector2(420, 90), Color("6fbf5a"), 38)
+		var ob := UI.button(self, "انتخاب بخش دیگر", Vector2(x(150), y), Vector2(420, 90), UI.col("primary"), 38)
 		ob.pressed.connect(func(): main.go("choice", {"kind": "age"}))
 		y += 106.0
 	var rb := UI.button(self, "تکرار مرحله", Vector2(x(60), y), Vector2(290, 74), Color("f0a64a"), 28)
 	rb.pressed.connect(func(): main.go("game", {"age": age, "diff": diff, "level": level}))
-	var mb := UI.button(self, "نقشه مرحله‌ها", Vector2(x(370), y), Vector2(290, 74), Color("d9b36a"), 28)
+	var mb := UI.button(self, "نقشه مرحله‌ها", Vector2(x(370), y), Vector2(290, 74), UI.col("secondary"), 28)
 	mb.pressed.connect(func(): main.go("map"))
 
 func _confetti() -> void:

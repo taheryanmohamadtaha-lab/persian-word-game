@@ -18,6 +18,17 @@ static func speak(t: String) -> void:
 static func particles() -> float:
 	return _root().get_node("Game").particles_scale()
 
+static func theme() -> Dictionary:
+	return _root().get_node("Game").theme()
+
+static func col(n: String) -> Color:
+	return theme()[n]
+
+static func make_hero() -> Hero:
+	var h := Hero.new()
+	h.character = _root().get_node("Game").settings["character"]
+	return h
+
 static func fa(v) -> String:
 	var out := ""
 	for ch in str(v):

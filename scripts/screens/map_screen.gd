@@ -22,7 +22,7 @@ func build() -> void:
 		var px := x(360) + row_w / 2.0 - 150.0 - c * 180.0
 		var py := 200.0 + r * 230.0
 		var open := Game.is_unlocked(age, diff, lv)
-		var b := UI.button(self, UI.fa(lv) if open else "قفل", Vector2(px, py), Vector2(150, 150), Color("6fbf5a") if open else Color("a9a39a"), 56 if open else 34)
+		var b := UI.button(self, UI.fa(lv) if open else "قفل", Vector2(px, py), Vector2(150, 150), UI.col("primary") if open else Color("a9a39a"), 56 if open else 34)
 		b.disabled = not open
 		if open:
 			b.pressed.connect(func(): main.go("game", {"age": age, "diff": diff, "level": lv}))

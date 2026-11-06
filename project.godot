@@ -7,6 +7,7 @@ config/name="بازی با کلمات"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.png"
+config/quit_on_go_back=false
 boot_splash/bg_color=Color(0.96, 0.78, 0.58, 1)
 
 [audio]
